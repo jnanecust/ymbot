@@ -7,6 +7,11 @@ ros2 launch start_robot run.launch.py left_effector:=drill right_effector:=gripp
 ros2 launch start_robot run.launch.py end_effector:=hand real_robot:=true
 ```
 
+## mount desk
+sudo ntfsfix -d /dev/sda1
+
+
+
 ## 使用moveit 的 demo.launch.py归位
 ```
 ros2 launch ymbot_d_moveit_config demo.launch.py real_robot:=true
@@ -14,3 +19,10 @@ ros2 launch ymbot_d_moveit_config demo.launch.py real_robot:=true
 
 colcon build --packages-select start_robot  vr_receiver_tcp
 ros2 launch start_robot run.launch.py end_effector:=hand dataset_root:=/home/ymzz/ymbot_lerobot_data/ dataset_task:="put mug cup on the plate"
+
+
+export HF_HOME=/home/ymzz/.cache/huggingface
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1 
+ros2 launch start_robot run.launch.py   end_effector:=hand   enable_policy_inference:=true   policy_type:=smolvla   policy_path:=/home/ymzz/YMbot_ROS2/src/020000/pretrained_model policy_dataset_root:=/home/ymzz/ymbot_pi0_dataset
+ 

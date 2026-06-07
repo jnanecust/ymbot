@@ -17,3 +17,4 @@ launch/run.launch_bak.py
 resource/start_robot
 start_robot/__init__.py
 start_robot/real_lerobot_collector.py
+start_robot/real_policy_inference.py

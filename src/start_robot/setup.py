@@ -24,6 +24,7 @@ setup(
                 'console_scripts': [
             # 'robot_controller = start_robot.robot_controller:main',
             'real_lerobot_collector = start_robot.real_lerobot_collector:main',
+            'real_policy_inference = start_robot.real_policy_inference:main',
         ],
         
     },

@@ -1,5 +1,7 @@
+/home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot/real_policy_inference.py
 /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot/__init__.py
 /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot/real_lerobot_collector.py
+/home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot/__pycache__/real_policy_inference.cpython-312.pyc
 /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot/__pycache__/__init__.cpython-312.pyc
 /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot/__pycache__/real_lerobot_collector.cpython-312.pyc
 /home/ymzz/YMbot_ROS2/install/start_robot/share/ament_index/resource_index/packages/start_robot
@@ -18,3 +20,4 @@
 /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot-0.0.0-py3.12.egg-info/top_level.txt
 /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot-0.0.0-py3.12.egg-info/PKG-INFO
 /home/ymzz/YMbot_ROS2/install/start_robot/lib/start_robot/real_lerobot_collector
+/home/ymzz/YMbot_ROS2/install/start_robot/lib/start_robot/real_policy_inference

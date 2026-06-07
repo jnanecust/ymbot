@@ -213,8 +213,14 @@ def generate_launch_description():
 
     enable_data_collection_arg = DeclareLaunchArgument(
         name='enable_data_collection',
-        default_value='true',
+        default_value='false',
         description='Start LeRobot data collector node (true/false)'
+    )
+
+    enable_policy_inference_arg = DeclareLaunchArgument(
+        name='enable_policy_inference',
+        default_value='true',
+        description='Start LeRobot policy inference node (true/false)'
     )
 
     dataset_root_arg = DeclareLaunchArgument(
@@ -241,10 +247,52 @@ def generate_launch_description():
         description='Main observation image topic'
     )
 
-    dataset_wrist_image_topic_arg = DeclareLaunchArgument(
-        name='dataset_wrist_image_topic',
-        default_value='/left/left/color/image_raw',
-        description='Wrist observation image topic'
+    dataset_wrist_left_image_topic_arg = DeclareLaunchArgument(
+        name='dataset_wrist_left_image_topic',
+        default_value='/left/left/color/image_rect_raw',
+        description='Left wrist observation image topic'
+    )
+
+    dataset_wrist_right_image_topic_arg = DeclareLaunchArgument(
+        name='dataset_wrist_right_image_topic',
+        default_value='/right/right/color/image_rect_raw',
+        description='Right wrist observation image topic'
+    )
+
+    policy_type_arg = DeclareLaunchArgument(
+        name='policy_type',
+        default_value='smolvla',
+        description='Policy type: smolvla | act'
+    )
+
+    policy_dataset_root_arg = DeclareLaunchArgument(
+        name='policy_dataset_root',
+        default_value='/home/zhou/vla/lerobot-mujoco-tutorial/omy_pnp_language',
+        description='Dataset root used for policy metadata/stats'
+    )
+
+    policy_dataset_repo_id_arg = DeclareLaunchArgument(
+        name='policy_dataset_repo_id',
+        default_value='omy_pnp_language',
+        description='Dataset repo_id used for policy metadata/stats'
+    )
+
+    policy_path_arg = DeclareLaunchArgument(
+        name='policy_path',
+        default_value='/home/zhou/vla/lerobot-mujoco-tutorial/ckpt/smolvla_omy/checkpoints/last/pretrained_model',
+        description='Policy checkpoint path'
+    )
+
+    policy_task_arg = DeclareLaunchArgument(
+        name='policy_task',
+        default_value='Put mug cup on the plate',
+        description='Task text passed to the policy'
+    )
+
+    policy_device_arg = DeclareLaunchArgument(
+        name='policy_device',
+        default_value='cuda',
+        description='Policy device: cuda | cpu'
     )
 
     head_camera_launch = ExecuteProcess(
@@ -294,11 +342,19 @@ def generate_launch_description():
         left_effector_arg,
         right_effector_arg,
         enable_data_collection_arg,
+        enable_policy_inference_arg,
         dataset_root_arg,
         dataset_repo_id_arg,
         dataset_task_arg,
         dataset_image_topic_arg,
-        dataset_wrist_image_topic_arg,
+        dataset_wrist_left_image_topic_arg,
+        dataset_wrist_right_image_topic_arg,
+        policy_type_arg,
+        policy_dataset_root_arg,
+        policy_dataset_repo_id_arg,
+        policy_path_arg,
+        policy_task_arg,
+        policy_device_arg,
 
         # 启动硬件及控制器
         IncludeLaunchDescription(
@@ -329,7 +385,7 @@ def generate_launch_description():
                         # 参考src/remote_operate_pkg/remote_operate_pkg/joint_control.py:17
                         # leftarm rightarm
                         'target_positions:=[0.488692191, 0.226892803, 0.104719755, -1.535889742, 0.0, 0.698131701, -0.27925268, '
-                        '-0.488692191, -0.226892803, -0.104719755, 1.535889742, 0.0, 0.698131701, 0.27925268, 0.0, -0.523598776]'
+                        '-0.488692191, -0.226892803, -0.104719755, 1.535889742, 0.0, 0.698131701, 0.27925268, 0.0, -0.959931]'
                     ],
                     output='screen',
                     name='joint_initialization'
@@ -366,10 +422,34 @@ def generate_launch_description():
                     'repo_id': LaunchConfiguration('dataset_repo_id'),
                     'task': LaunchConfiguration('dataset_task'),
                     'image_topic': LaunchConfiguration('dataset_image_topic'),
-                    'wrist_image_topic': LaunchConfiguration('dataset_wrist_image_topic'),
+                    'wrist_left_image_topic': LaunchConfiguration('dataset_wrist_left_image_topic'),
+                    'wrist_right_image_topic': LaunchConfiguration('dataset_wrist_right_image_topic'),
                 }
             ],
             condition=IfCondition(LaunchConfiguration('enable_data_collection')),
+        ),
+
+        # LeRobot/SmolVLA/ACT 推理节点；由 VR 手柄发布 /policy_command 控制开始/结束
+        Node(
+            package='start_robot',
+            executable='real_policy_inference',
+            name='real_policy_inference',
+            output='screen',
+            parameters=[
+                {
+                    'policy_type': LaunchConfiguration('policy_type'),
+                    'dataset_root': LaunchConfiguration('policy_dataset_root'),
+                    'dataset_repo_id': LaunchConfiguration('policy_dataset_repo_id'),
+                    'policy_path': LaunchConfiguration('policy_path'),
+                    'task': LaunchConfiguration('policy_task'),
+                    'device': LaunchConfiguration('policy_device'),
+                    'image_topic': LaunchConfiguration('dataset_image_topic'),
+                    'wrist_left_image_topic': LaunchConfiguration('dataset_wrist_left_image_topic'),
+                    'wrist_right_image_topic': LaunchConfiguration('dataset_wrist_right_image_topic'),
+                    'command_topic': '/policy_command',
+                }
+            ],
+            condition=IfCondition(LaunchConfiguration('enable_policy_inference')),
         ),
 
         # ik解 & 碰撞检测

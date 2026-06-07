@@ -1,0 +1,1 @@
+export HF_HOME=/home/zhou/.cache/huggingfaceexport HF_HUB_OFFLINE=1export TRANSFORMERS_OFFLINE=1ros2 launch start_robot run.launch.py   end_effector:=hand   enable_policy_inference:=true   policy_type:=smolvla   policy_path:=/home/zhou/vla/lerobot-mujoco-tutorial/ckpt/smolvla_omy/checkpoints/last/pretrained_model

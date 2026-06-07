@@ -67,6 +67,7 @@ class ControllerPoseReceiver(Node):
         self.torso_joints_pub = self.create_publisher(Float32MultiArray, "/torso_joints_vel", 1)
         self.reset_pub = self.create_publisher(String, '/reset_command', 10)
         self.record_pub = self.create_publisher(String, '/record_command', 10)
+        self.policy_pub = self.create_publisher(String, '/policy_command', 10)
 
         # TCP通信初始化
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -347,8 +348,10 @@ class ControllerPoseReceiver(Node):
         record_stop_combo = bool(l_btn1 and r_btn2 and not l_btn2 and not r_btn1)
         if record_start_combo and (not self._prev_record_start_combo):
             self._publish_record_command("start")
+            self._publish_policy_command("start")
         if record_stop_combo and (not self._prev_record_stop_combo):
             self._publish_record_command("stop")
+            self._publish_policy_command("stop")
         self._prev_record_start_combo = record_start_combo
         self._prev_record_stop_combo = record_stop_combo
         
@@ -540,6 +543,12 @@ class ControllerPoseReceiver(Node):
         msg.data = command
         self.record_pub.publish(msg)
         self.get_logger().info(f"record_command -> {command}")
+
+    def _publish_policy_command(self, command: str):
+        msg = String()
+        msg.data = command
+        self.policy_pub.publish(msg)
+        self.get_logger().info(f"policy_command -> {command}")
 
     # 控制输出
     def _update_chassis_twist(self, l_btn1: bool, l_btn2: bool, r_btn1: bool, r_btn2: bool, block: bool):

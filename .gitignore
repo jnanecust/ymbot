@@ -1,0 +1,9 @@
+
+# model checkpoints / training states
+src/020000/
+*.safetensors
+
+# logs
+log/
+Log/
+*.log
