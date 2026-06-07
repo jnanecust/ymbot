@@ -1,0 +1,40 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/TaskStatusCode.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    module TaskStatusCode_Constants {
+      @verbatim (language="comment", text=
+        "0x00  任务执行中")
+      const uint8 RUNNING = 0;
+      @verbatim (language="comment", text=
+        "0x01  任务已完成")
+      const uint8 DONDE = 1;
+      @verbatim (language="comment", text=
+        "0x02  任务成功")
+      const uint8 SUCCEEDED = 2;
+      @verbatim (language="comment", text=
+        "0x03  任务失败")
+      const uint8 ABORTED = 3;
+      @verbatim (language="comment", text=
+        "0x04  任务取消")
+      const uint8 CANCLE = 4;
+      @verbatim (language="comment", text=
+        "0x05  任务挂起/任务等待")
+      const uint8 HELD = 5;
+      @verbatim (language="comment", text=
+        "0x05  任务拒绝")
+      const uint8 REFUSE = 6;
+      @verbatim (language="comment", text=
+        "0x06  当前没有任务")
+      const uint8 NONE = 7;
+    };
+    @verbatim (language="comment", text=
+      "Task status code from robot to platform")
+    struct TaskStatusCode {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};

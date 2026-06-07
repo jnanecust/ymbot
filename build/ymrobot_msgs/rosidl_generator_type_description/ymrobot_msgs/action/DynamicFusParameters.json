@@ -1,0 +1,542 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters",
+      "fields": [
+        {
+          "name": "goal",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_Goal"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "result",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_Result"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "feedback",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_Feedback"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "send_goal_service",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "get_result_service",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "feedback_message",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_FeedbackMessage"
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": [
+      {
+        "type_name": "builtin_interfaces/msg/Time",
+        "fields": [
+          {
+            "name": "sec",
+            "type": {
+              "type_id": 6,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "nanosec",
+            "type": {
+              "type_id": 7,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "service_msgs/msg/ServiceEventInfo",
+        "fields": [
+          {
+            "name": "event_type",
+            "type": {
+              "type_id": 3,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "stamp",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "builtin_interfaces/msg/Time"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "client_gid",
+            "type": {
+              "type_id": 51,
+              "capacity": 16,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "sequence_number",
+            "type": {
+              "type_id": 8,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "unique_identifier_msgs/msg/UUID",
+        "fields": [
+          {
+            "name": "uuid",
+            "type": {
+              "type_id": 51,
+              "capacity": 16,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "ymrobot_msgs/action/DynamicFusParameters_Feedback",
+        "fields": [
+          {
+            "name": "message",
+            "type": {
+              "type_id": 17,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "status",
+            "type": {
+              "type_id": 15,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "ymrobot_msgs/action/DynamicFusParameters_FeedbackMessage",
+        "fields": [
+          {
+            "name": "goal_id",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "unique_identifier_msgs/msg/UUID"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "feedback",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_Feedback"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult",
+        "fields": [
+          {
+            "name": "request_message",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult_Request"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "response_message",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult_Response"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "event_message",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult_Event"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult_Event",
+        "fields": [
+          {
+            "name": "info",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "service_msgs/msg/ServiceEventInfo"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "request",
+            "type": {
+              "type_id": 97,
+              "capacity": 1,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult_Request"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "response",
+            "type": {
+              "type_id": 97,
+              "capacity": 1,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult_Response"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult_Request",
+        "fields": [
+          {
+            "name": "goal_id",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "unique_identifier_msgs/msg/UUID"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult_Response",
+        "fields": [
+          {
+            "name": "status",
+            "type": {
+              "type_id": 2,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "result",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_Result"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "ymrobot_msgs/action/DynamicFusParameters_Goal",
+        "fields": [
+          {
+            "name": "fused_mode",
+            "type": {
+              "type_id": 3,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "ymrobot_msgs/action/DynamicFusParameters_Result",
+        "fields": [
+          {
+            "name": "success",
+            "type": {
+              "type_id": 15,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "message",
+            "type": {
+              "type_id": 17,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal",
+        "fields": [
+          {
+            "name": "request_message",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal_Request"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "response_message",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal_Response"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "event_message",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal_Event"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal_Event",
+        "fields": [
+          {
+            "name": "info",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "service_msgs/msg/ServiceEventInfo"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "request",
+            "type": {
+              "type_id": 97,
+              "capacity": 1,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal_Request"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "response",
+            "type": {
+              "type_id": 97,
+              "capacity": 1,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal_Response"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal_Request",
+        "fields": [
+          {
+            "name": "goal_id",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "unique_identifier_msgs/msg/UUID"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "goal",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "ymrobot_msgs/action/DynamicFusParameters_Goal"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal_Response",
+        "fields": [
+          {
+            "name": "accepted",
+            "type": {
+              "type_id": 15,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "stamp",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "builtin_interfaces/msg/Time"
+            },
+            "default_value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters",
+      "hash_string": "RIHS01_33d58d018eff80eec8604d47689b76a3b802d14e2252738d86b51445758f8893"
+    },
+    {
+      "type_name": "builtin_interfaces/msg/Time",
+      "hash_string": "RIHS01_b106235e25a4c5ed35098aa0a61a3ee9c9b18d197f398b0e4206cea9acf9c197"
+    },
+    {
+      "type_name": "service_msgs/msg/ServiceEventInfo",
+      "hash_string": "RIHS01_41bcbbe07a75c9b52bc96bfd5c24d7f0fc0a08c0cb7921b3373c5732345a6f45"
+    },
+    {
+      "type_name": "unique_identifier_msgs/msg/UUID",
+      "hash_string": "RIHS01_1b8e8aca958cbea28fe6ef60bf6c19b683c97a9ef60bb34752067d0f2f7ab437"
+    },
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_Feedback",
+      "hash_string": "RIHS01_b373f8ad73008cec55ed205e08ebaf86594d7987b2286180f9e0c93596e01ea1"
+    },
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_FeedbackMessage",
+      "hash_string": "RIHS01_8f3709bcf1179534e735a0511288439813f9ba2823a4c3c1d2ce5b9c826054fd"
+    },
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult",
+      "hash_string": "RIHS01_25145124e666f590ec87666f4575cda64cb38446e6eddfefa1fbe3633248be3e"
+    },
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult_Event",
+      "hash_string": "RIHS01_3216cf83967ba3811e5fff65ced294f2a3e1c1d22c1558b963f15648b3804a7a"
+    },
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult_Request",
+      "hash_string": "RIHS01_280766269ace9cd53d8c40593c9c0ac17c3bd84f1204a74e57b257fe2792f6a2"
+    },
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_GetResult_Response",
+      "hash_string": "RIHS01_56503ada744a7349d3a556f8ff3eb99aed45ca662408de5091c879590b203d8f"
+    },
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_Goal",
+      "hash_string": "RIHS01_3616c354c5f69d4c8d1b207a57ec4c8556f247c165e0c064a2d511c2b5524058"
+    },
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_Result",
+      "hash_string": "RIHS01_a50d9a35a9798c06806c9884ee1a9bc87e5f4c5be795833a5368dff5619e4e26"
+    },
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal",
+      "hash_string": "RIHS01_6cc47648a42e20a5c44ab6caec1356921a4c04c5b42d838d6f270f84eef972fd"
+    },
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal_Event",
+      "hash_string": "RIHS01_49d5544e9b6b256c7cf9d001231a62781a82639e6f36e897a494a8557e1c7290"
+    },
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal_Request",
+      "hash_string": "RIHS01_97be4cf88284ab8c98da71ae209d7eb4aa3644348c6ac96ec51d4b476537e312"
+    },
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_SendGoal_Response",
+      "hash_string": "RIHS01_408212efff26df6832f1e8e42993cc5f63c7be4db54b7cd3b4d62085ea080efb"
+    }
+  ]
+}

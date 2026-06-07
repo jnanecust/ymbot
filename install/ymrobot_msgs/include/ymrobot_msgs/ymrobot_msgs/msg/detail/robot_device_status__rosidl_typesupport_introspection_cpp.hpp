@@ -1,0 +1,1 @@
+/home/ymzz/YMbot_ROS2/build/ymrobot_msgs/rosidl_typesupport_introspection_cpp/ymrobot_msgs/msg/detail/robot_device_status__rosidl_typesupport_introspection_cpp.hpp

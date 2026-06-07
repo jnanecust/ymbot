@@ -1,0 +1,21 @@
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/ymzz/YMbot_ROS2/src/chassis_control/chassis_driver_node/include/chassis_driver_node/chassis_driver_node.hpp:12[m[K,
+                 from [01m[K/home/ymzz/YMbot_ROS2/src/chassis_control/chassis_driver_node/src/chassis_driver_node.cpp:1[m[K:
+[01m[K/home/ymzz/YMbot_ROS2/src/chassis_control/chassis_driver_node/src/chassis_driver_node.cpp:[m[K In member function ‘[01m[Kvoid ymrobot::ChassisDriverNode::[01;32m[KSendTcpMessage[m[K(const std::string&)[m[K’:
+[01m[K/home/ymzz/YMbot_ROS2/src/chassis_control/chassis_driver_node/src/chassis_driver_node.cpp:98:9:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: First argument to logging macros must be an rclcpp::Logger
+   98 |         [01;31m[KRCLCPP_INFO[m[K("Socket 发送消息");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K:
+[01m[K/home/ymzz/YMbot_ROS2/src/chassis_control/chassis_driver_node/src/chassis_driver_node.cpp:98:9:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kget_name[m[K’ in ‘[01m[K("Socket \37777777745\37777777617\37777777621\37777777751\37777777600\37777777601\37777777746\37777777666\37777777610\37777777746\37777777601\37777777657")[m[K’, which is of non-class type ‘[01m[Kconst char [20][m[K’
+   98 |         [01;31m[KRCLCPP_INFO[m[K("Socket 发送消息");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ymzz/YMbot_ROS2/src/chassis_control/chassis_driver_node/src/chassis_driver_node.cpp:98:9:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kget_name[m[K’ in ‘[01m[K("Socket \37777777745\37777777617\37777777621\37777777751\37777777600\37777777601\37777777746\37777777666\37777777610\37777777746\37777777601\37777777657")[m[K’, which is of non-class type ‘[01m[Kconst char [20][m[K’
+   98 |         [01;31m[KRCLCPP_INFO[m[K("Socket 发送消息");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ymzz/YMbot_ROS2/src/chassis_control/chassis_driver_node/src/chassis_driver_node.cpp:98:9:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+   98 |         [01;31m[KRCLCPP_INFO[m[K("Socket 发送消息");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/chassis_driver_node.dir/build.make:76：CMakeFiles/chassis_driver_node.dir/src/chassis_driver_node.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/chassis_driver_node.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

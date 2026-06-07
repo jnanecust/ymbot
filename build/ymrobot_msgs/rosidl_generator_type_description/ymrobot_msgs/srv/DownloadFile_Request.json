@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/srv/DownloadFile_Request",
+      "fields": [
+        {
+          "name": "url",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "save_path",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/srv/DownloadFile_Request",
+      "hash_string": "RIHS01_fcb533c454bc3a3f56b6a80d30314f4dbe737b5bc4717156756930eba39b2ce3"
+    }
+  ]
+}

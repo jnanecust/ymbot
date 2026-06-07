@@ -1,0 +1,1 @@
+/home/ymzz/YMbot_ROS2/build/ymrobot_msgs/rosidl_typesupport_introspection_c/ymrobot_msgs/msg/detail/emoji_fixed__rosidl_typesupport_introspection_c.h

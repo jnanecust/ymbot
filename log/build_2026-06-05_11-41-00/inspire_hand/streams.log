@@ -1,0 +1,27 @@
+[0.484s] Invoking command in '/home/ymzz/YMbot_ROS2/src/inspire_hand': CONDA_PROMPT_MODIFIER=(lerobot) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/inspire_hand/prefix_override:/home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages:${PYTHONPATH} /home/ymzz/anaconda3/envs/lerobot/bin/python3.12 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/inspire_hand build --build-base /home/ymzz/YMbot_ROS2/build/inspire_hand/build install --record /home/ymzz/YMbot_ROS2/build/inspire_hand/install.log --single-version-externally-managed install_data
+[0.691s] running egg_info
+[0.703s] writing ../../build/inspire_hand/inspire_hand.egg-info/PKG-INFO
+[0.703s] writing dependency_links to ../../build/inspire_hand/inspire_hand.egg-info/dependency_links.txt
+[0.704s] writing entry points to ../../build/inspire_hand/inspire_hand.egg-info/entry_points.txt
+[0.704s] writing requirements to ../../build/inspire_hand/inspire_hand.egg-info/requires.txt
+[0.704s] writing top-level names to ../../build/inspire_hand/inspire_hand.egg-info/top_level.txt
+[0.731s] reading manifest file '../../build/inspire_hand/inspire_hand.egg-info/SOURCES.txt'
+[0.732s] writing manifest file '../../build/inspire_hand/inspire_hand.egg-info/SOURCES.txt'
+[0.732s] running build
+[0.732s] running build_py
+[0.732s] copying inspire_hand/inspire_hand_sub.py -> /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand
+[0.732s] copying inspire_hand/utils/inspire_hand_new_api.py -> /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand/utils
+[0.732s] running install
+[0.735s] running install_lib
+[0.749s] copying /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand/inspire_hand_sub.py -> /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand
+[0.749s] byte-compiling /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand/inspire_hand_sub.py to inspire_hand_sub.cpython-312.pyc
+[0.751s] running install_data
+[0.751s] running install_egg_info
+[0.763s] removing '/home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand-0.0.1-py3.12.egg-info' (and everything under it)
+[0.763s] Copying ../../build/inspire_hand/inspire_hand.egg-info to /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand-0.0.1-py3.12.egg-info
+[0.764s] running install_scripts
+[0.832s] Installing hand_grasp_state_pub script to /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/inspire_hand
+[0.832s] Installing inspire_hand_sub script to /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/inspire_hand
+[0.832s] Installing single_hand_command script to /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/inspire_hand
+[0.832s] writing list of installed files to '/home/ymzz/YMbot_ROS2/build/inspire_hand/install.log'
+[0.853s] Invoked command in '/home/ymzz/YMbot_ROS2/src/inspire_hand' returned '0': CONDA_PROMPT_MODIFIER=(lerobot) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/inspire_hand/prefix_override:/home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages:${PYTHONPATH} /home/ymzz/anaconda3/envs/lerobot/bin/python3.12 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/inspire_hand build --build-base /home/ymzz/YMbot_ROS2/build/inspire_hand/build install --record /home/ymzz/YMbot_ROS2/build/inspire_hand/install.log --single-version-externally-managed install_data

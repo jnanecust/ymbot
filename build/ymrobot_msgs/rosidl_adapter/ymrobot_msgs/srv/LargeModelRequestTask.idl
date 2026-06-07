@@ -1,0 +1,43 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from ymrobot_msgs/srv/LargeModelRequestTask.srv
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module srv {
+    struct LargeModelRequestTask_Request {
+      @verbatim (language="comment", text=
+        "请求任务类型 0：导航到某个标记点  1：多点导航  2：导览任务  3: 上肢任务")
+      uint8 larget_mode_task_type;
+
+      @verbatim (language="comment", text=
+        "标记点位名称  --- 用于单点导航")
+      string mark_point_name;
+
+      @verbatim (language="comment", text=
+        "多点导航")
+      sequence<string> mark_point_name_list;
+
+      @verbatim (language="comment", text=
+        "导览任务名称")
+      string guidance_task_name;
+
+      @verbatim (language="comment", text=
+        "上肢固定动作码")
+      uint8 upper_climb_fixed_action;
+    };
+    struct LargeModelRequestTask_Response {
+      @verbatim (language="comment", text=
+        "是否成功")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "错误码    0 -- 任务失败  1--当前有任务在执行中  2--当前机器在充电  3--当前机器人出现故障  4--当前机器在升级中")
+      uint8 error_code;
+
+      @verbatim (language="comment", text=
+        "消息反馈 -- 失败原因 成功了 啥的......")
+      string message;
+    };
+  };
+};

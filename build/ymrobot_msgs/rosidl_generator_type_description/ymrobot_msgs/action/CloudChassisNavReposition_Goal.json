@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/action/CloudChassisNavReposition_Goal",
+      "fields": [
+        {
+          "name": "reposition_pose_name",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/action/CloudChassisNavReposition_Goal",
+      "hash_string": "RIHS01_dc17aa9d1061b81bf3242279a3e50b2a3cc186d1a79e0b2f13fdc10d51108e8f"
+    }
+  ]
+}

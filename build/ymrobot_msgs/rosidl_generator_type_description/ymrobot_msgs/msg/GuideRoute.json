@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/msg/GuideRoute",
+      "fields": [
+        {
+          "name": "mark_points_list",
+          "type": {
+            "type_id": 161,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "audios_list",
+          "type": {
+            "type_id": 161,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/msg/GuideRoute",
+      "hash_string": "RIHS01_deaed067f2d907b5df5ff60a3379b2c2966c8f435fd07d91744ee3af6312d4d0"
+    }
+  ]
+}

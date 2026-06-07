@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/msg/ControlMode",
+      "fields": [
+        {
+          "name": "code",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/msg/ControlMode",
+      "hash_string": "RIHS01_aae25cc84c2caf482ffa6d5dc616aa47e42c352d05ce1b226fb4dccd341419df"
+    }
+  ]
+}

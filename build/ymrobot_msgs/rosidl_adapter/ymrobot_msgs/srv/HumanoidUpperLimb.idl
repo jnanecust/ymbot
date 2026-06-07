@@ -1,0 +1,33 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from ymrobot_msgs/srv/HumanoidUpperLimb.srv
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module srv {
+    struct HumanoidUpperLimb_Request {
+      @verbatim (language="comment", text=
+        "上肢动作类型， 0 ： 固定动作")
+      uint8 upper_action_task_type;
+
+      @verbatim (language="comment", text=
+        "上肢固定动作")
+      string fixed_upper_action;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct HumanoidUpperLimb_Response {
+      @verbatim (language="comment", text=
+        "是否成功与否")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "错误或者成功的原因")
+      string message;
+
+      @verbatim (language="comment", text=
+        "总时间")
+      double total_elapsed_time;
+    };
+  };
+};

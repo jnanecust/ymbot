@@ -1,0 +1,1 @@
+/home/ymzz/YMbot_ROS2/build/ymrobot_msgs/rosidl_typesupport_fastrtps_cpp/ymrobot_msgs/msg/detail/dot_points_list__rosidl_typesupport_fastrtps_cpp.hpp

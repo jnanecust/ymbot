@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from ymrobot_msgs/srv/PowerDrill.srv
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module srv {
+    struct PowerDrill_Request {
+      @verbatim (language="comment", text=
+        "抓取任务类型  0--打开  1--关闭  2--正转 3--反转")
+      uint8 power_drill_task_type;
+    };
+    struct PowerDrill_Response {
+      @verbatim (language="comment", text=
+        "是否成功")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "消息反馈  --失败原因 成功了 啥的........")
+      string message;
+    };
+  };
+};

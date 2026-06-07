@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/TaskStatus.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Task status from robot to platform")
+    struct TaskStatus {
+      string amr_id;
+
+      @verbatim (language="comment", text=
+        "任务id")
+      string task_id;
+
+      @verbatim (language="comment", text=
+        "TaskStatusCode")
+      uint8 status;
+
+      string text;
+    };
+  };
+};

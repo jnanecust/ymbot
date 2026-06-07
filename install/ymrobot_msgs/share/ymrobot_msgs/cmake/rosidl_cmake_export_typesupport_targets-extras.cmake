@@ -1,0 +1,1 @@
+/home/ymzz/YMbot_ROS2/build/ymrobot_msgs/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake

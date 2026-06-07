@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from ymrobot_msgs/srv/DownloadFile.srv
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module srv {
+    struct DownloadFile_Request {
+      string url;
+
+      string save_path;
+    };
+    struct DownloadFile_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

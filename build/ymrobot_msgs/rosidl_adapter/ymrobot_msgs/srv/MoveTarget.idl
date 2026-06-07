@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from ymrobot_msgs/srv/MoveTarget.srv
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module srv {
+    struct MoveTarget_Request {
+      @verbatim (language="comment", text=
+        "目标点位")
+      string target_pose;
+    };
+    struct MoveTarget_Response {
+      @verbatim (language="comment", text=
+        "是否成功")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "消息反馈  --失败原因 成功了 啥的........")
+      string message;
+    };
+  };
+};

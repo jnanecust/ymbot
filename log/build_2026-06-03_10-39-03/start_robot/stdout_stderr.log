@@ -1,0 +1,12 @@
+running egg_info
+writing ../../build/start_robot/vr_receiver_tcp.egg-info/PKG-INFO
+writing dependency_links to ../../build/start_robot/vr_receiver_tcp.egg-info/dependency_links.txt
+writing entry points to ../../build/start_robot/vr_receiver_tcp.egg-info/entry_points.txt
+writing requirements to ../../build/start_robot/vr_receiver_tcp.egg-info/requires.txt
+writing top-level names to ../../build/start_robot/vr_receiver_tcp.egg-info/top_level.txt
+reading manifest file '../../build/start_robot/vr_receiver_tcp.egg-info/SOURCES.txt'
+writing manifest file '../../build/start_robot/vr_receiver_tcp.egg-info/SOURCES.txt'
+running build
+running install
+running install_data
+error: can't copy 'resource/vr_receiver_tcp': doesn't exist or not a regular file

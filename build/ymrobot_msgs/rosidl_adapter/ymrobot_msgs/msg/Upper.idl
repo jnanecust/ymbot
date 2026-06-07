@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/Upper.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    struct Upper {
+      boolean chassis_status;
+
+      boolean auto_status;
+    };
+  };
+};

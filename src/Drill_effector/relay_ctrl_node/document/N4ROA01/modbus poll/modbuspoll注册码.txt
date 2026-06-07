@@ -1,0 +1,5 @@
+modbus poll 4.3.4зЂВсТыЃК9876543210ABCDEFGHIJ9813
+
+
+
+ 

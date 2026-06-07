@@ -1,0 +1,76 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/msg/DotPointsList",
+      "fields": [
+        {
+          "name": "dot_points_list",
+          "type": {
+            "type_id": 145,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "ymrobot_msgs/msg/DotPoints"
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": [
+      {
+        "type_name": "ymrobot_msgs/msg/DotPoints",
+        "fields": [
+          {
+            "name": "action",
+            "type": {
+              "type_id": 3,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "pose_name",
+            "type": {
+              "type_id": 17,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "map_name",
+            "type": {
+              "type_id": 17,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "pose_describe",
+            "type": {
+              "type_id": 17,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/msg/DotPointsList",
+      "hash_string": "RIHS01_3363a00dbeb3338fd99badae92f4fff8610d7b550a332b931e7c94fdb38c997a"
+    },
+    {
+      "type_name": "ymrobot_msgs/msg/DotPoints",
+      "hash_string": "RIHS01_6aa4e75e37a42ab568f79722e8c6b6ad77c64b1e3adf44e1725e3d89665ece14"
+    }
+  ]
+}

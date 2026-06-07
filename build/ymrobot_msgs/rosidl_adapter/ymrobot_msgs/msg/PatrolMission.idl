@@ -1,0 +1,41 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/PatrolMission.msg
+// generated code does not contain a copyright notice
+
+#include "ymrobot_msgs/msg/ImageVideo.idl"
+
+module ymrobot_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "巡逻任务消息")
+    struct PatrolMission {
+      @verbatim (language="comment", text=
+        "图像和视频消息")
+      ymrobot_msgs::msg::ImageVideo image_video_msg;
+
+      @verbatim (language="comment", text=
+        "是否全程播放音频")
+      boolean is_audio_played_throughout_the_entire_process;
+
+      @verbatim (language="comment", text=
+        "全程音频文件名")
+      string full_audio_name;
+
+      @verbatim (language="comment", text=
+        "是否全程录制")
+      boolean is_the_entire_process_recorded;
+
+      @verbatim (language="comment", text=
+        "是否激活附近点")
+      boolean is_activate_the_nearby_point;
+
+      @verbatim (language="comment", text=
+        "就近点距离")
+      float nearby_point_radius;
+
+      @verbatim (language="comment", text=
+        "导航点名称列表")
+      sequence<string> nav_name_list;
+    };
+  };
+};

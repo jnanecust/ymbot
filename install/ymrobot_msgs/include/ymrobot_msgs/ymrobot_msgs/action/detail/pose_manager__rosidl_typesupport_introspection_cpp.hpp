@@ -1,0 +1,1 @@
+/home/ymzz/YMbot_ROS2/build/ymrobot_msgs/rosidl_typesupport_introspection_cpp/ymrobot_msgs/action/detail/pose_manager__rosidl_typesupport_introspection_cpp.hpp

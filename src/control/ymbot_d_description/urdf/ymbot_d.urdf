@@ -1,0 +1,2070 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="ymbot_d">
+  
+  <link name="base_footprint_link" />
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint_link" />
+    <child link="base_link" />
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0353476651251868 0.000503750304112704 0.0168413962987716"
+        rpy="0 0 0" />
+      <mass
+        value="27.8314684040588" />
+      <inertia
+        ixx="0.259553705568155"
+        ixy="-0.000181091612117233"
+        ixz="-0.00045258366289853"
+        iyy="0.168935381965196"
+        iyz="-6.70243828410091E-05"
+        izz="0.406340667183815" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Body_Link1">
+    <inertial>
+      <origin
+        xyz="0.00187315955478468 0.00247463569955175 0.249416018286313"
+        rpy="0 0 0" />
+      <mass
+        value="7.16861706519079" />
+      <inertia
+        ixx="0.0664593681394471"
+        ixy="-4.119328001787E-06"
+        ixz="-0.00027834965721528"
+        iyy="0.0694534120737685"
+        iyz="2.26813219073596E-06"
+        izz="0.00883338197117878" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Body_Joint1"
+    type="revolute">
+    <origin
+      xyz="-0.010018 0 0.098"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Body_Link1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.698131701"
+      upper="1.57"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Body_Link2">
+    <inertial>
+      <origin
+        xyz="0.00791736240512064 -7.14224183926693E-05 0.21282873941659"
+        rpy="0 0 0" />
+      <mass
+        value="5.15181809242667" />
+      <inertia
+        ixx="0.11250717820743"
+        ixy="1.11743814299791E-06"
+        ixz="0.00025919053562411"
+        iyy="0.122412706704328"
+        iyz="-5.41512054048613E-06"
+        izz="0.0127534404311308" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Body_Joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.38"
+      rpy="0 0 0" />
+    <parent
+      link="Body_Link1" />
+    <child
+      link="Body_Link2" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.436332313"
+      upper="2.792526803"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Body_Link3">
+    <inertial>
+      <origin
+        xyz="-6.05470245875969E-08 0.00226348203884674 0.00546842194495656"
+        rpy="0 0 0" />
+      <mass
+        value="2.61810881472087" />
+      <inertia
+        ixx="0.00282362818767921"
+        ixy="-2.85815471243507E-10"
+        ixz="-1.01773264909724E-06"
+        iyy="0.00443009975488711"
+        iyz="4.42388062784333E-10"
+        izz="0.00317617000669418" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Body_Joint3"
+    type="revolute">
+    <origin
+      xyz="0 0 0.380000000000002"
+      rpy="0 0 0" />
+    <parent
+      link="Body_Link2" />
+    <child
+      link="Body_Link3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.27925268"
+      upper="1.884955592"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Body_Link4">
+    <inertial>
+      <origin
+        xyz="0.00181826179190837 0.000409050579986026 0.256470640585862"
+        rpy="0 0 0" />
+      <mass
+        value="5.78711819137821" />
+      <inertia
+        ixx="0.0339771601770215"
+        ixy="-6.51209404325178E-07"
+        ixz="-5.04314136133913E-05"
+        iyy="0.0339157128256237"
+        iyz="4.81707975112108E-06"
+        izz="0.0069825546634043" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/waist_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/waist_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Body_Joint4"
+    type="revolute">
+    <origin
+      xyz="-0.000149312849898759 0.000225587108490438 0.10028777193681"
+      rpy="0 0 0" />
+    <parent
+      link="Body_Link3" />
+    <child
+      link="Body_Link4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.791111"
+      upper="2.791111"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Body_Link5">
+    <inertial>
+      <origin
+        xyz="-0.0639313148162174 0.000146618818275407 0.0199533907167747"
+        rpy="0 0 0" />
+      <mass
+        value="2.10556157969786" />
+      <inertia
+        ixx="0.0520965396424675"
+        ixy="5.58216086226644E-06"
+        ixz="7.7688486507088E-05"
+        iyy="0.0308006434541297"
+        iyz="-3.36376547786809E-05"
+        izz="0.0271173395206746" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/fix.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/fix.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Body_Joint5"
+    type="fixed">
+    <origin
+      xyz="0.0462993128500052 -0.000225587108488995 0.239468209946098"
+      rpy="0 0 0" />
+    <parent
+      link="Body_Link4" />
+    <child
+      link="Body_Link5" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Left_Arm_Link1">
+    <inertial>
+      <origin
+        xyz="-0.00158458473546214 0.0609717276618704 -8.93982256283676E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.362853885037719" />
+      <inertia
+        ixx="0.000335316916483206"
+        ixy="-1.77636537043239E-05"
+        ixz="1.18153917961271E-07"
+        iyy="0.000221639064259971"
+        iyz="3.18912658452628E-07"
+        izz="0.00019873034713881" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Arm_Joint1"
+    type="revolute">
+    <origin
+      xyz="-0.0461499999999991 0.136499999999998 0.172744018118703"
+      rpy="0 0 0" />
+    <parent
+      link="Body_Link5" />
+    <child
+      link="Left_Arm_Link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.791111111"
+      upper="2.791111111"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Left_Arm_Link2">
+    <inertial>
+      <origin
+        xyz="0.00845334024959781 -0.00243824985020048 -0.0187640590215792"
+        rpy="0 0 0" />
+      <mass
+        value="0.230014028231143" />
+      <inertia
+        ixx="0.000358720514497407"
+        ixy="3.5170110147646E-07"
+        ixz="3.76707070431909E-05"
+        iyy="0.000298021372401555"
+        iyz="-4.84880789576693E-06"
+        izz="0.000248057099217126" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Arm_Joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.0779999999999997 0"
+      rpy="0 0 0" />
+    <parent
+      link="Left_Arm_Link1" />
+    <child
+      link="Left_Arm_Link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.21"
+      upper="1.4"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Left_Arm_Link3">
+    <inertial>
+      <origin
+        xyz="2.94481142294927E-05 -0.000591245885826319 -0.12375660403638"
+        rpy="0 0 0" />
+      <mass
+        value="1.03684459264223" />
+      <inertia
+        ixx="0.00194984489560278"
+        ixy="-2.26863233530796E-07"
+        ixz="-5.93006681050842E-07"
+        iyy="0.0023999102824376"
+        iyz="7.06969086197535E-06"
+        izz="0.00111075122719523" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_shoulder_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Arm_Joint3"
+    type="revolute">
+    <origin
+      xyz="-0.00249999999999985 0 -0.0539999999999998"
+      rpy="0 0 0" />
+    <parent
+      link="Left_Arm_Link2" />
+    <child
+      link="Left_Arm_Link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.791111111"
+      upper="2.791111111"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Left_Arm_Link4">
+    <inertial>
+      <origin
+        xyz="1.08792142490891E-08 0.0297892147181579 -0.0243668104375614"
+        rpy="0 0 0" />
+      <mass
+        value="0.173729297190777" />
+      <inertia
+        ixx="0.000185337408579251"
+        ixy="2.44942635158397E-11"
+        ixz="-1.67974748940136E-11"
+        iyy="0.000178122392501103"
+        iyz="5.38310394224553E-05"
+        izz="0.000103913946383554" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_elbow_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_elbow_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Arm_Joint4"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.2095"
+      rpy="0 0 0" />
+    <parent
+      link="Left_Arm_Link3" />
+    <child
+      link="Left_Arm_Link4" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.6"
+      upper="1.6"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Left_Arm_Link5">
+    <inertial>
+      <origin
+        xyz="3.68952133404828E-07 0.000207234353172783 -0.0905688511484006"
+        rpy="0 0 0" />
+      <mass
+        value="0.491494204449735" />
+      <inertia
+        ixx="0.000268799640753664"
+        ixy="8.60856059673662E-08"
+        ixz="-7.96153239887374E-08"
+        iyy="0.000440463942874673"
+        iyz="-7.41102723484846E-07"
+        izz="0.000338943906258671" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_elbow_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_elbow_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Arm_Joint5"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.054"
+      rpy="0 0 0" />
+    <parent
+      link="Left_Arm_Link4" />
+    <child
+      link="Left_Arm_Link5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.046666667"
+      upper="1.046666667"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Left_Arm_Link6">
+    <inertial>
+      <origin
+        xyz="5.93527384792208E-10 0.0232367496600203 -0.0243541665213697"
+        rpy="0 0 0" />
+      <mass
+        value="0.0859853454398065" />
+      <inertia
+        ixx="6.03034255479267E-05"
+        ixy="6.12984428728261E-15"
+        ixz="-5.78355165052144E-13"
+        iyy="4.31795912429374E-05"
+        iyz="1.80906644185882E-05"
+        izz="3.95365588417931E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_wrist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Arm_Joint6"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.14969999999999"
+      rpy="0 0 0" />
+    <parent
+      link="Left_Arm_Link5" />
+    <child
+      link="Left_Arm_Link6" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.03"
+      upper="1.57"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Left_Arm_Link7">
+    <inertial>
+      <origin
+        xyz="-5.69577252648289E-06 -9.91357552676819E-05 -0.0616860735697398"
+        rpy="0 0 0" />
+      <mass
+        value="0.287596402075435" />
+      <inertia
+        ixx="0.000190252863227858"
+        ixy="7.9514221839002E-08"
+        ixz="-3.76134360800468E-09"
+        iyy="0.000270728526909918"
+        iyz="-7.11239471933316E-07"
+        izz="0.00020437702023847" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_wrist_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_wrist_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Arm_Joint7"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0420000000000042"
+      rpy="0 0 0" />
+    <parent
+      link="Left_Arm_Link6" />
+    <child
+      link="Left_Arm_Link7" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.791111111"
+      upper="2.791111111"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Left_Arm_Link8">
+    <inertial>
+      <origin
+        xyz="0.0154189192522637 -0.002990380083738 -0.115446354346831"
+        rpy="0 0 0" />
+      <mass
+        value="0.200819368765736" />
+      <inertia
+        ixx="0.000279409271968056"
+        ixy="1.45862957367336E-06"
+        ixz="1.11314770155202E-06"
+        iyy="0.000297661148074776"
+        iyz="-2.91684113718624E-06"
+        izz="6.27256003039627E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_hend_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_hend_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Arm_Joint8"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.101654022988496"
+      rpy="0 0 0" />
+    <parent
+      link="Left_Arm_Link7" />
+    <child
+      link="Left_Arm_Link8" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Right_Arm_Link1">
+    <inertial>
+      <origin
+        xyz="0.0040606860984971 -0.0648199906716272 -0.00687401681364264"
+        rpy="0 0 0" />
+      <mass
+        value="0.46879896692852" />
+      <inertia
+        ixx="0.000443369355995322"
+        ixy="1.7763653499694E-05"
+        ixz="3.9374826983133E-05"
+        iyy="0.000359103446640963"
+        iyz="3.18913111534035E-07"
+        izz="0.000305477903772488" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Arm_Joint1"
+    type="revolute">
+    <origin
+      xyz="-0.0461499999999991 -0.136500000000002 0.172744018118703"
+      rpy="0 0 0" />
+    <parent
+      link="Body_Link5" />
+    <child
+      link="Right_Arm_Link1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-2.791111111"
+      upper="2.791111111"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Right_Arm_Link2">
+    <inertial>
+      <origin
+        xyz="0.00844731012158618 0.00244305014494917 -0.0187559386598534"
+        rpy="0 0 0" />
+      <mass
+        value="0.22994539422482" />
+      <inertia
+        ixx="0.000358639127965663"
+        ixy="-3.61899632930373E-07"
+        ixz="3.76605414428746E-05"
+        iyy="0.000297951716664526"
+        iyz="4.87260280479042E-06"
+        izz="0.000248092087382731" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Arm_Joint2"
+    type="revolute">
+    <origin
+      xyz="0 -0.078 0"
+      rpy="0 0 0" />
+    <parent
+      link="Right_Arm_Link1" />
+    <child
+      link="Right_Arm_Link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.4"
+      upper="0.21"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Right_Arm_Link3">
+    <inertial>
+      <origin
+        xyz="-2.14216243856909E-05 0.000646458688395246 -0.123593995985355"
+        rpy="0 0 0" />
+      <mass
+        value="1.03417431499115" />
+      <inertia
+        ixx="0.0019496185633444"
+        ixy="-1.30189698091453E-07"
+        ixz="5.90923992969568E-07"
+        iyy="0.00239976086007522"
+        iyz="-6.85914161887317E-06"
+        izz="0.00111048702148746" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_shoulder_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Arm_Joint3"
+    type="revolute">
+    <origin
+      xyz="-0.00250000000000015 0 -0.0539999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="Right_Arm_Link2" />
+    <child
+      link="Right_Arm_Link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.791111111"
+      upper="2.791111111"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Right_Arm_Link4">
+    <inertial>
+      <origin
+        xyz="-1.08792150266789E-08 -0.0297892147181578 -0.0243668104375615"
+        rpy="0 0 0" />
+      <mass
+        value="0.173729297190778" />
+      <inertia
+        ixx="0.000185337408579251"
+        ixy="2.4494263410394E-11"
+        ixz="1.67974748971406E-11"
+        iyy="0.000178122392501104"
+        iyz="-5.38310394224552E-05"
+        izz="0.000103913946383553" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_elbow_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_elbow_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Arm_Joint4"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.2095"
+      rpy="0 0 0" />
+    <parent
+      link="Right_Arm_Link3" />
+    <child
+      link="Right_Arm_Link4" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.6"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Right_Arm_Link5">
+    <inertial>
+      <origin
+        xyz="-6.08712576209008E-07 -0.000321075157750095 -0.0925455939642248"
+        rpy="0 0 0" />
+      <mass
+        value="0.476612567818142" />
+      <inertia
+        ixx="0.000264354594638592"
+        ixy="8.60852054147545E-08"
+        ixz="7.89478759951335E-08"
+        iyy="0.000433934928824694"
+        iyz="-4.57671987165951E-07"
+        izz="0.000336602197816121" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_elbow_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_elbow_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Arm_Joint5"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.054"
+      rpy="0 0 0" />
+    <parent
+      link="Right_Arm_Link4" />
+    <child
+      link="Right_Arm_Link5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.046666667"
+      upper="1.046666667" 
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Right_Arm_Link6">
+    <inertial>
+      <origin
+        xyz="-5.93433315074915E-10 -0.0232367496598942 -0.0243541665214043"
+        rpy="0 0 0" />
+      <mass
+        value="0.0859853454398087" />
+      <inertia
+        ixx="6.03034255479277E-05"
+        ixy="6.1972783894084E-15"
+        ixz="5.7827733378997E-13"
+        iyy="4.31795912428785E-05"
+        iyz="-1.80906644185944E-05"
+        izz="3.95365588418532E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Arm_Joint6"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.149699999999994"
+      rpy="0 0 0" />
+    <parent
+      link="Right_Arm_Link5" />
+    <child
+      link="Right_Arm_Link6" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.03"
+      upper="1.4"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Right_Arm_Link7">
+    <inertial>
+      <origin
+        xyz="5.71506598028189E-06 -8.16357003629586E-05 -0.063564658872785"
+        rpy="0 0 0" />
+      <mass
+        value="0.272714760613046" />
+      <inertia
+        ixx="0.000185807812603788"
+        ixy="7.95115604859429E-08"
+        ixz="2.11608742273252E-09"
+        iyy="0.000264199506975325"
+        iyz="-6.2796010654571E-07"
+        izz="0.000202035309758427" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_wrist_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_wrist_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Arm_Joint7"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.042"
+      rpy="0 0 0" />
+    <parent
+      link="Right_Arm_Link6" />
+    <child
+      link="Right_Arm_Link7" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.791111111"
+      upper="2.791111111"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Right_Arm_Link8">
+    <inertial>
+      <origin
+        xyz="0.0154189209809921 0.0029905250003277 -0.115446236160092"
+        rpy="0 0 0" />
+      <mass
+        value="0.200819506792599" />
+      <inertia
+        ixx="0.000279408661870745"
+        ixy="-1.45871595436328E-06"
+        ixz="1.11462399759262E-06"
+        iyy="0.000297659093500876"
+        iyz="2.91677087602986E-06"
+        izz="6.27250536465777E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_hend_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_hend_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Arm_Joint8"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.101654022988496"
+      rpy="0 0 0" />
+    <parent
+      link="Right_Arm_Link7" />
+    <child
+      link="Right_Arm_Link8" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Neck_Link1">
+    <inertial>
+      <origin
+        xyz="-0.0008532115197766 1.30021024558058E-05 0.0182221095213044"
+        rpy="0 0 0" />
+      <mass
+        value="0.190442940296004" />
+      <inertia
+        ixx="0.000952074339054671"
+        ixy="-6.89555810305132E-09"
+        ixz="-5.34275701438033E-05"
+        iyy="0.00086389055920561"
+        iyz="2.58052608929035E-08"
+        izz="0.0009462626574099" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/neck_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0.945098039215686 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/neck_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Neck_Joint1"
+    type="revolute">
+    <origin
+      xyz="-0.069968 0 0.24574"
+      rpy="0 0 0" />
+    <parent
+      link="Body_Link5" />
+    <child
+      link="Neck_Link1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Neck_Link2">
+    <inertial>
+      <origin
+        xyz="0.0175265660456915 4.97507912503858E-05 0.0876199997015523"
+        rpy="0 0 0" />
+      <mass
+        value="0.609743997046861" />
+      <inertia
+        ixx="0.00259614939598938"
+        ixy="1.75939896381455E-07"
+        ixz="-4.78185229886299E-05"
+        iyy="0.00152301075200743"
+        iyz="2.1009208486953E-06"
+        izz="0.00176954035206637" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/neck_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/neck_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Neck_Joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.039"
+      rpy="0 0 0" />
+    <parent
+      link="Neck_Link1" />
+    <child
+      link="Neck_Link2" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.6"
+      upper="0.6"
+      effort="100.0"
+      velocity="1.0" />
+  </joint>
+  <link
+    name="Driving_Wheel_Link1">
+    <inertial>
+      <origin
+        xyz="1.10851037368517E-05 -0.0321824495411306 -1.79639464338299E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.10128919726351" />
+      <inertia
+        ixx="0.001987967670575"
+        ixy="4.31404552148897E-10"
+        ixz="4.65822015687102E-09"
+        iyy="0.0033960036255626"
+        iyz="-3.26220098673076E-07"
+        izz="0.00198802461958584" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Driving_Wheel_Joint1"
+    type="revolute">
+    <origin
+      xyz="-0.00152856242999786 0.214798276573846 -0.0138801793492921"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Driving_Wheel_Link1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Driving_Wheel_Link2">
+    <inertial>
+      <origin
+        xyz="-1.10851075993488E-05 0.0321824495411293 -1.79639464338854E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.10128919726351" />
+      <inertia
+        ixx="0.001987967670575"
+        ixy="4.31573540772818E-10"
+        ixz="-4.65822019462925E-09"
+        iyy="0.00339600362556259"
+        iyz="3.2622009867275E-07"
+        izz="0.00198802461958584" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Driving_Wheel_Joint2"
+    type="revolute">
+    <origin
+      xyz="-0.0015079 -0.2148 -0.01388"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Driving_Wheel_Link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="front_wheel_link">
+    <inertial>
+      <origin
+        xyz="-7.13686900125632E-05 -4.46368417126863E-05 0.0104714494744466"
+        rpy="0 0 0" />
+      <mass
+        value="0.035106593513545" />
+      <inertia
+        ixx="8.67020804983555E-06"
+        ixy="4.12969173075822E-09"
+        ixz="-1.39338136684762E-08"
+        iyy="1.32333114518816E-05"
+        iyz="-5.87227271539501E-09"
+        izz="1.0640688507359E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/front_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/front_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_wheel_joint"
+    type="revolute">
+    <origin
+      xyz="0.249481771853093 -0.00170171583316425 -0.0632"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_wheel_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="rear_wheel_link">
+    <inertial>
+      <origin
+        xyz="1.11022302462516E-16 0 0.00672647122946046"
+        rpy="0 0 0" />
+      <mass
+        value="0.00929770489643694" />
+      <inertia
+        ixx="1.56646973988399E-06"
+        ixy="-4.6482835185392E-14"
+        ixz="1.19042007939118E-20"
+        iyy="1.73663360681807E-06"
+        iyz="1.47960671661639E-20"
+        izz="8.07716671312223E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/rear_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/rear_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_wheel_joint"
+    type="revolute">
+    <origin
+      xyz="-0.28852 0 -0.0785"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_wheel_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Driven_Wheel_Link3">
+    <inertial>
+      <origin
+        xyz="-0.0214998812977308 8.35221783680069E-05 -0.0582786102373734"
+        rpy="0 0 0" />
+      <mass
+        value="0.193777534850707" />
+      <inertia
+        ixx="0.000109417239624735"
+        ixy="-2.00459664951455E-08"
+        ixz="-2.03469818155867E-07"
+        iyy="0.000114771384427038"
+        iyz="-3.28822855547263E-09"
+        izz="9.67264886840736E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_rear_post_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.901960784313726 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_rear_post_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Driven_Wheel_Joint3"
+    type="revolute">
+    <origin
+      xyz="-0.215018228146907 0.159998276567904 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Driven_Wheel_Link3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Driven_Wheel_Link4">
+    <inertial>
+      <origin
+        xyz="-0.000467847351224931 1.72569696631902E-06 -1.80481108502661E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.174260089205512" />
+      <inertia
+        ixx="9.75047589351668E-05"
+        ixy="-2.08347176528114E-08"
+        ixz="-5.72938911700718E-10"
+        iyy="0.000102848528419116"
+        iyz="-6.13903400372162E-10"
+        izz="9.59864706444714E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_rear_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.901960784313726 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_rear_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Driven_Wheel_Joint4"
+    type="revolute">
+    <origin
+      xyz="-0.0235 9.0752E-05 -0.0615"
+      rpy="0 0 0" />
+    <parent
+      link="Driven_Wheel_Link3" />
+    <child
+      link="Driven_Wheel_Link4" />
+    <axis
+      xyz="-0.0075555 -0.99997 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Driven_Wheel_Link7">
+    <inertial>
+      <origin
+        xyz="-0.0215000426993473 -5.97469926849614E-06 -0.0582786102373742"
+        rpy="0 0 0" />
+      <mass
+        value="0.193777534850707" />
+      <inertia
+        ixx="0.000109417165512202"
+        ixy="2.24188456700087E-09"
+        ixz="-2.03454367639046E-07"
+        iyy="0.000114771458539571"
+        iyz="-4.13517061206666E-09"
+        izz="9.6726488684074E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_rear_post_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.901960784313726 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_rear_post_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Driven_Wheel_Joint7"
+    type="revolute">
+    <origin
+      xyz="-0.21502 -0.16 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Driven_Wheel_Link7" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Driven_Wheel_Link8">
+    <inertial>
+      <origin
+        xyz="-0.000467850481334436 -2.21795648569501E-07 -1.80481109279818E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.174260089205513" />
+      <inertia
+        ixx="9.75046780763462E-05"
+        ixy="1.40997245652133E-09"
+        ixz="-5.70378492136211E-10"
+        iyy="0.000102848609277937"
+        iyz="-6.16283017063856E-10"
+        izz="9.59864706444717E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_rear_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.901960784313726 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_rear_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Driven_Wheel_Joint8"
+    type="revolute">
+    <origin
+      xyz="-0.0235 0 -0.0615"
+      rpy="0 0 0" />
+    <parent
+      link="Driven_Wheel_Link7" />
+    <child
+      link="Driven_Wheel_Link8" />
+    <axis
+      xyz="0.00030083 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Driven_Wheel_Link5">
+    <inertial>
+      <origin
+        xyz="-0.0215000417512453 -8.74445560244963E-06 -0.058278610237374"
+        rpy="0 0 0" />
+      <mass
+        value="0.193777534850707" />
+      <inertia
+        ixx="0.000109417166178687"
+        ixy="2.93165461888171E-09"
+        ixz="-2.03453833234912E-07"
+        iyy="0.000114771457873087"
+        iyz="-4.16138071337726E-09"
+        izz="9.67264886840738E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_front_post_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.901960784313726 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_front_post_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Driven_Wheel_Joint5"
+    type="revolute">
+    <origin
+      xyz="0.21498 -0.16 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Driven_Wheel_Link5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Driven_Wheel_Link6">
+    <inertial>
+      <origin
+        xyz="-0.000467850448879287 -2.82066776158274E-07 -1.80481109224306E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.174260089205513" />
+      <inertia
+        ixx="9.75046785283154E-05"
+        ixy="2.09840766737147E-09"
+        ixz="-5.70299094428634E-10"
+        iyy="0.000102848608825968"
+        iyz="-6.16356491419533E-10"
+        izz="9.59864706444715E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_front_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.901960784313726 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/right_front_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Driven_Wheel_Joint6"
+    type="revolute">
+    <origin
+      xyz="-0.0235 -1.0097E-05 -0.0615"
+      rpy="0 0 0" />
+    <parent
+      link="Driven_Wheel_Link5" />
+    <child
+      link="Driven_Wheel_Link6" />
+    <axis
+      xyz="0.00042966 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Driven_Wheel_Link1">
+    <inertial>
+      <origin
+        xyz="-0.021499426123232 0.000162936007322 -0.058278610237374"
+        rpy="0 0 0" />
+      <mass
+        value="0.193777534850707" />
+      <inertia
+        ixx="0.000109417460761206"
+        ixy="-3.98219607596992E-08"
+        ixz="-2.03480575902748E-07"
+        iyy="0.000114771163290567"
+        iyz="-2.53664693893261E-09"
+        izz="9.67264886840736E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_front_post_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.901960784313726 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_front_post_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Driven_Wheel_Joint1"
+    type="revolute">
+    <origin
+      xyz="0.21498 0.16 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Driven_Wheel_Link1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Driven_Wheel_Link2">
+    <inertial>
+      <origin
+        xyz="-0.000467837785442154 3.45377920429532E-06 -1.80481109224306E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.174260089205513" />
+      <inertia
+        ixx="9.75049857568836E-05"
+        ixy="-4.05723672041318E-08"
+        ixz="-5.75202586386266E-10"
+        iyy="0.000102848301597399"
+        iyz="-6.11782940450954E-10"
+        izz="9.59864706444713E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_front_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.901960784313726 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ymbot_d_description/meshes/left_front_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Driven_Wheel_Joint2"
+    type="revolute">
+    <origin
+      xyz="-0.023499 0.00017755 -0.0615"
+      rpy="0 0 0" />
+    <parent
+      link="Driven_Wheel_Link1" />
+    <child
+      link="Driven_Wheel_Link2" />
+    <axis
+      xyz="-0.0075555 -0.99997 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

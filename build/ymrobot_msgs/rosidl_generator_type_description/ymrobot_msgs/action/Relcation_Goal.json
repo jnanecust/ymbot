@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/action/Relcation_Goal",
+      "fields": [
+        {
+          "name": "map_name",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/action/Relcation_Goal",
+      "hash_string": "RIHS01_d94e7c98a7415ed6f2be8f5dc41894f7396ee6a9c0c4313dac8b197da3154678"
+    }
+  ]
+}

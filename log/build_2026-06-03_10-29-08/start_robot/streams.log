@@ -1,0 +1,27 @@
+[0.667s] Invoking command in '/home/ymzz/YMbot_ROS2/build/start_robot': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/start_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/ymzz/YMbot_ROS2/build/start_robot/build
+[0.927s] running develop
+[1.099s] Removing /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start-robot.egg-link (link to .)
+[1.120s] Invoked command in '/home/ymzz/YMbot_ROS2/build/start_robot' returned '0': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/start_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/ymzz/YMbot_ROS2/build/start_robot/build
+[1.121s] Invoking command in '/home/ymzz/YMbot_ROS2/src/start_robot': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/start_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/start_robot build --build-base /home/ymzz/YMbot_ROS2/build/start_robot/build install --record /home/ymzz/YMbot_ROS2/build/start_robot/install.log --single-version-externally-managed install_data --force
+[1.347s] running egg_info
+[1.363s] writing ../../build/start_robot/start_robot.egg-info/PKG-INFO
+[1.363s] writing dependency_links to ../../build/start_robot/start_robot.egg-info/dependency_links.txt
+[1.363s] writing requirements to ../../build/start_robot/start_robot.egg-info/requires.txt
+[1.363s] writing top-level names to ../../build/start_robot/start_robot.egg-info/top_level.txt
+[1.380s] reading manifest file '../../build/start_robot/start_robot.egg-info/SOURCES.txt'
+[1.380s] writing manifest file '../../build/start_robot/start_robot.egg-info/SOURCES.txt'
+[1.380s] running build
+[1.380s] running install
+[1.385s] running install_data
+[1.385s] copying resource/start_robot -> /home/ymzz/YMbot_ROS2/install/start_robot/share/ament_index/resource_index/packages
+[1.385s] copying package.xml -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot
+[1.385s] copying launch/run.launch.py -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot/launch
+[1.385s] copying launch/rs_multi_camera_launch.py -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot/launch
+[1.385s] copying launch/gemini2L_recorder_launch.py -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot/launch
+[1.385s] copying launch/rs_single_camera_launch.py -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot/launch
+[1.385s] copying launch/rs_launch.py -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot/launch
+[1.385s] running install_egg_info
+[1.419s] Copying ../../build/start_robot/start_robot.egg-info to /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot-0.0.0-py3.12.egg-info
+[1.419s] running install_scripts
+[1.532s] writing list of installed files to '/home/ymzz/YMbot_ROS2/build/start_robot/install.log'
+[1.558s] Invoked command in '/home/ymzz/YMbot_ROS2/src/start_robot' returned '0': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/start_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/start_robot build --build-base /home/ymzz/YMbot_ROS2/build/start_robot/build install --record /home/ymzz/YMbot_ROS2/build/start_robot/install.log --single-version-externally-managed install_data --force

@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/action/CloudChassisCharge_Feedback",
+      "fields": [
+        {
+          "name": "status",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "message",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/action/CloudChassisCharge_Feedback",
+      "hash_string": "RIHS01_109d2cb17c3a99df0ffe7d46e04ea550df195de18be76d61384beae47e9cba34"
+    }
+  ]
+}

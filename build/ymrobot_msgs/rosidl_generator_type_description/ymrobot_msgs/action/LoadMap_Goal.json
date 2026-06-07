@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/action/LoadMap_Goal",
+      "fields": [
+        {
+          "name": "map_pgm",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/action/LoadMap_Goal",
+      "hash_string": "RIHS01_59999e549bb9f862cb33ca0488c5a8f4bf2765a6b4ecb0622b50dec8d84e3935"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# 双臂运动服务定义
+geometry_msgs/PoseStamped   left_position     # 左臂目标位姿
+geometry_msgs/PoseStamped   right_position    # 右臂目标位姿
+bool                        sync_mode         # 同步模式：true=同步运动，false=异步运动（先左后右）
+---
+bool                        success           # 是否成功           
+string                      message           # 消息反馈

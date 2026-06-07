@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/CurrentPose.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    struct CurrentPose {
+      float x;
+
+      float y;
+
+      float z;
+
+      float roll;
+
+      float pitch;
+
+      float yaw;
+
+      float rx;
+
+      float ry;
+
+      float rz;
+
+      float rw;
+    };
+  };
+};

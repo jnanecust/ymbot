@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/SetParams.action
+// generated code does not contain a copyright notice
+
+#include "ymrobot_msgs/msg/Task.idl"
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "goal")
+    struct SetParams_Goal {
+      @verbatim (language="comment", text=
+        "当前任务")
+      ymrobot_msgs::msg::Task current_task;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct SetParams_Result {
+      boolean success;
+
+      string message;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct SetParams_Feedback {
+      boolean status;
+
+      string message;
+    };
+  };
+};

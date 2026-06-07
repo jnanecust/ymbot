@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: inspire_hand
+Version: 0.0.1
+Summary: Description of your package
+License: License Type
+Requires-Dist: setuptools
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary

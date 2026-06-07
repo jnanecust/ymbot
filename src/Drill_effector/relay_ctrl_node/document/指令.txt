@@ -1,0 +1,8 @@
+初始资料，不一定具有参考价值，详见readme.md文档为准
+
+停止：01 06 00 01 04 00 DA CA
+正转：01 06 00 00 04 00 8B 0A
+反转：01 06 00 00 08 00 8E 0A
+
+淘宝购买链接：
+https://item.taobao.com/item.htm?id=740247729126&mi_id=0000OcYgUPuTeXjkUI47qqj6pw9wspbyC2dxF2ZDIC4ZZxo&spm=tbpc.boughtlist.suborder_itemtitle.1.2c652e8d7iPpR4

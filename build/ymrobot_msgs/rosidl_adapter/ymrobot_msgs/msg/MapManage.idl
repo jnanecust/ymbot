@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/MapManage.msg
+// generated code does not contain a copyright notice
+
+#include "ymrobot_msgs/msg/MapTaskCommand.idl"
+
+module ymrobot_msgs {
+  module msg {
+    struct MapManage {
+      ymrobot_msgs::msg::MapTaskCommand map_task;
+
+      string pcd_file;
+
+      string pgm_file;
+    };
+  };
+};

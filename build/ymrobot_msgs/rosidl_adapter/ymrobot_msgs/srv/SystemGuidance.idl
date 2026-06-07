@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from ymrobot_msgs/srv/SystemGuidance.srv
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module srv {
+    struct SystemGuidance_Request {
+      @verbatim (language="comment", text=
+        "重启类似  0:关机 1:断电重启 2:软件重启")
+      uint8 reboot_type;
+    };
+    struct SystemGuidance_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

@@ -1,0 +1,36 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/MoveElevator.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "ControlRobot.action")
+    struct MoveElevator_Goal {
+      @verbatim (language="comment", text=
+        "要直线行驶的距离（米）")
+      double target_x;
+
+      @verbatim (language="comment", text=
+        "要旋转的弧度（弧度制")
+      double target_y;
+
+      double target_theta;
+    };
+    struct MoveElevator_Result {
+      @verbatim (language="comment", text=
+        "是否成功完成")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "反馈信息")
+      string message;
+    };
+    struct MoveElevator_Feedback {
+      @verbatim (language="comment", text=
+        "执行进度（0-100%）")
+      double progress;
+    };
+  };
+};

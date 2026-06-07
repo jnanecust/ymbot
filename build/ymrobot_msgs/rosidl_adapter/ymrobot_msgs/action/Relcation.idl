@@ -1,0 +1,39 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/Relcation.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Goal: ")
+    struct Relcation_Goal {
+      string map_name;
+    };
+    @verbatim (language="comment", text=
+      "Result: ")
+    struct Relcation_Result {
+      @default (value=FALSE)
+      boolean success;
+
+      float remaining_distance;
+
+      float remaining_time;
+    };
+    module Relcation_Feedback_Constants {
+      const uint8 STATUS_SUCCESS = 1;
+      const uint8 STATUS_ERROR = 2;
+      const uint8 STATUS_MOVEING = 3;
+      const uint8 STATUS_STOP = 4;
+    };
+    @verbatim (language="comment", text=
+      "Feedback: ")
+    struct Relcation_Feedback {
+      float remaining_distance;
+
+      float remaining_time;
+
+      uint8 status;
+    };
+  };
+};

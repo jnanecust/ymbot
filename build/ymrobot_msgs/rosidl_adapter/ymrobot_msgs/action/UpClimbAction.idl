@@ -1,0 +1,51 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/UpClimbAction.action
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/PoseStamped.idl"
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "目标（请求）")
+    struct UpClimbAction_Goal {
+      @verbatim (language="comment", text=
+        "上肢任务类型 0：末端变化笛卡尔  1：关节变化  2：预设动作变化  3：夹爪动作")
+      uint8 up_limb_task_type;
+
+      @verbatim (language="comment", text=
+        "0 笛卡尔坐标下 导航点  -- 任务类型是0时候")
+      geometry_msgs::msg::PoseStamped position;
+
+      @verbatim (language="comment", text=
+        "1：关节变化，数据列表  关节1、关节2、关节3......")
+      sequence<double> place_joint_list;
+
+      @verbatim (language="comment", text=
+        "2: 预设动作变化，标志位，0--动作0  1---动作1")
+      uint8 action_fixed;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct UpClimbAction_Result {
+      @verbatim (language="comment", text=
+        "执行成功或者失败")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "错误信息或者成功信息")
+      string message;
+
+      @verbatim (language="comment", text=
+        "总时间")
+      double total_elapsed_time;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct UpClimbAction_Feedback {
+      string message;
+
+      boolean status;
+    };
+  };
+};

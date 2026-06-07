@@ -1,0 +1,40 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/Recharge.action
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/PoseStamped.idl"
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Goal: ")
+    struct Recharge_Goal {
+      geometry_msgs::msg::PoseStamped target_pose;
+    };
+    @verbatim (language="comment", text=
+      "Result: ")
+    struct Recharge_Result {
+      @default (value=FALSE)
+      boolean success;
+
+      float remaining_distance;
+
+      float remaining_time;
+    };
+    module Recharge_Feedback_Constants {
+      const uint8 STATUS_SUCCESS = 1;
+      const uint8 STATUS_ERROR = 2;
+      const uint8 STATUS_MOVEING = 3;
+      const uint8 STATUS_STOP = 4;
+    };
+    @verbatim (language="comment", text=
+      "Feedback: ")
+    struct Recharge_Feedback {
+      float remaining_distance;
+
+      float remaining_time;
+
+      uint8 status;
+    };
+  };
+};

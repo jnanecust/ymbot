@@ -1,0 +1,20 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/LedShow.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    struct LedShow {
+      @verbatim (language="comment", text=
+        "亮度")
+      uint8 luminance;
+
+      uint8 color_r;
+
+      uint8 color_g;
+
+      uint8 color_b;
+    };
+  };
+};

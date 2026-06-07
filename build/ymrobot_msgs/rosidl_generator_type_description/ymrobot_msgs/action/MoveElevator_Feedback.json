@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/action/MoveElevator_Feedback",
+      "fields": [
+        {
+          "name": "progress",
+          "type": {
+            "type_id": 11,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/action/MoveElevator_Feedback",
+      "hash_string": "RIHS01_9bf1d4c2fd5829d91d09e749ffbe66f45e5a9bc55d34d81d1cb39e25a4ece651"
+    }
+  ]
+}

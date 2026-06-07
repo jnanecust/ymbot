@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/GuideRoute.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    struct GuideRoute {
+      sequence<string> mark_points_list;
+
+      sequence<string> audios_list;
+    };
+  };
+};

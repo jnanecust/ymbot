@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/srv/PowerDrill_Request",
+      "fields": [
+        {
+          "name": "power_drill_task_type",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/srv/PowerDrill_Request",
+      "hash_string": "RIHS01_9c5ee17d5e292f5a5fd1c5af5c9c356b847edafc072dd0909129ae3c9f913d9a"
+    }
+  ]
+}

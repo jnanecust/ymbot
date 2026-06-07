@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/srv/SystemGuidance_Request",
+      "fields": [
+        {
+          "name": "reboot_type",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/srv/SystemGuidance_Request",
+      "hash_string": "RIHS01_b984d546acd436d8bee9d5413695070209c590a6caf3d7b66ca9b37332e5b436"
+    }
+  ]
+}

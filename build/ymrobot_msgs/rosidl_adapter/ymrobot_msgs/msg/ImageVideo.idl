@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/ImageVideo.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    struct ImageVideo {
+      @verbatim (language="comment", text=
+        "相机任务类型 0：拍照 1：录制视频 2：拍照并录制视频 3：目标检测")
+      uint8 camera_task_type;
+
+      @verbatim (language="comment", text=
+        "相机拍照数量")
+      uint8 number_of_photos;
+
+      @verbatim (language="comment", text=
+        "拍照间隔 ms")
+      uint8 photos_interval;
+
+      @verbatim (language="comment", text=
+        "录制视频时长")
+      uint8 video_recording_time;
+
+      @verbatim (language="comment", text=
+        "3：目标检测")
+      string detect_target_name;
+    };
+  };
+};

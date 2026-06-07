@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/NavPoint.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/PoseStamped.idl"
+
+module ymrobot_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Navigation points")
+    struct NavPoint {
+      uint32 seq;
+
+      geometry_msgs::msg::PoseStamped position;
+
+      string nav_name;
+
+      string nav_map_name;
+
+      uint8 map_index;
+    };
+  };
+};

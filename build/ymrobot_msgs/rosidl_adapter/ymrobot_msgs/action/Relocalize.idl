@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/Relocalize.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Relocalize.action" "\n"
+      "目标（请求）")
+    struct Relocalize_Goal {
+      string pcd_path;
+
+      sequence<double> init_pose_list;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct Relocalize_Result {
+      boolean success;
+
+      string message;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct Relocalize_Feedback {
+      string message;
+
+      boolean status;
+    };
+  };
+};

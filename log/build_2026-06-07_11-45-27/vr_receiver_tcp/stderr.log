@@ -1,0 +1,7 @@
+/home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+  File "/home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages/vr_receiver_tcp/vr_receiver_tcp.py", line 44
+    self._current_twist = Twist():
+                                 ^
+SyntaxError: invalid syntax
+

@@ -1,0 +1,2 @@
+[console_scripts]
+real_lerobot_collector = start_robot.real_lerobot_collector:main

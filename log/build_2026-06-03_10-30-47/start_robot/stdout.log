@@ -1,0 +1,13 @@
+running egg_info
+creating ../../build/start_robot/vr_receiver_tcp.egg-info
+writing ../../build/start_robot/vr_receiver_tcp.egg-info/PKG-INFO
+writing dependency_links to ../../build/start_robot/vr_receiver_tcp.egg-info/dependency_links.txt
+writing entry points to ../../build/start_robot/vr_receiver_tcp.egg-info/entry_points.txt
+writing requirements to ../../build/start_robot/vr_receiver_tcp.egg-info/requires.txt
+writing top-level names to ../../build/start_robot/vr_receiver_tcp.egg-info/top_level.txt
+writing manifest file '../../build/start_robot/vr_receiver_tcp.egg-info/SOURCES.txt'
+reading manifest file '../../build/start_robot/vr_receiver_tcp.egg-info/SOURCES.txt'
+writing manifest file '../../build/start_robot/vr_receiver_tcp.egg-info/SOURCES.txt'
+running build
+running install
+running install_data

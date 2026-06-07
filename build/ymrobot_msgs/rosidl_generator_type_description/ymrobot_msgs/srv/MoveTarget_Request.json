@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/srv/MoveTarget_Request",
+      "fields": [
+        {
+          "name": "target_pose",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/srv/MoveTarget_Request",
+      "hash_string": "RIHS01_5e70dabf7fda6ad6fe40f666e7b16a9ce245a47d2996fda1566f05f95c203d47"
+    }
+  ]
+}

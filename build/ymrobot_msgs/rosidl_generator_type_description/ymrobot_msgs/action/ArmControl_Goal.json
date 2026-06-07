@@ -1,0 +1,66 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/action/ArmControl_Goal",
+      "fields": [
+        {
+          "name": "command",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "ymrobot_msgs/msg/Command"
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": [
+      {
+        "type_name": "ymrobot_msgs/msg/Command",
+        "fields": [
+          {
+            "name": "code",
+            "type": {
+              "type_id": 3,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "params_code",
+            "type": {
+              "type_id": 17,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "params",
+            "type": {
+              "type_id": 161,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/action/ArmControl_Goal",
+      "hash_string": "RIHS01_3c2798587362b99d7635ca1fcffa08c32f63bf17ee5c3589428d94892035d703"
+    },
+    {
+      "type_name": "ymrobot_msgs/msg/Command",
+      "hash_string": "RIHS01_1784e7733e04d48ec06dab63415d760b6323022082b2209f0a9d87f36a791485"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[0.692s] Invoking command in '/home/ymzz/YMbot_ROS2/src/vr_receiver_tcp': CONDA_PROMPT_MODIFIER=(lerobot) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/prefix_override:/home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages:${PYTHONPATH} /home/ymzz/anaconda3/envs/lerobot/bin/python3.12 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vr_receiver_tcp build --build-base /home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/build install --record /home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/install.log --single-version-externally-managed install_data
+[0.815s] /home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[0.815s]   warnings.warn(msg)
+[0.899s] running egg_info
+[0.913s] writing ../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/PKG-INFO
+[0.913s] writing dependency_links to ../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/dependency_links.txt
+[0.914s] writing entry points to ../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/entry_points.txt
+[0.914s] writing requirements to ../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/requires.txt
+[0.914s] writing top-level names to ../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/top_level.txt
+[0.945s] reading manifest file '../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/SOURCES.txt'
+[0.946s] writing manifest file '../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/SOURCES.txt'
+[0.946s] running build
+[0.946s] running build_py
+[0.946s] copying vr_receiver_tcp/vr_receiver_tcp_bak.py -> /home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/build/lib/vr_receiver_tcp
+[0.946s] running install
+[0.950s] running install_lib
+[0.963s] copying /home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/build/lib/vr_receiver_tcp/vr_receiver_tcp_bak.py -> /home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages/vr_receiver_tcp
+[0.964s] byte-compiling /home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages/vr_receiver_tcp/vr_receiver_tcp_bak.py to vr_receiver_tcp_bak.cpython-312.pyc
+[0.967s] running install_data
+[0.967s] running install_egg_info
+[0.981s] removing '/home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages/vr_receiver_tcp-0.0.0-py3.12.egg-info' (and everything under it)
+[0.981s] Copying ../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info to /home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages/vr_receiver_tcp-0.0.0-py3.12.egg-info
+[0.981s] running install_scripts
+[1.054s] Installing vr_receiver_tcp script to /home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/vr_receiver_tcp
+[1.054s] writing list of installed files to '/home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/install.log'
+[1.072s] Invoked command in '/home/ymzz/YMbot_ROS2/src/vr_receiver_tcp' returned '0': CONDA_PROMPT_MODIFIER=(lerobot) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/prefix_override:/home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages:${PYTHONPATH} /home/ymzz/anaconda3/envs/lerobot/bin/python3.12 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vr_receiver_tcp build --build-base /home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/build install --record /home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/install.log --single-version-externally-managed install_data

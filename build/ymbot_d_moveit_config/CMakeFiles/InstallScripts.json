@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/ymzz/YMbot_ROS2/build/ymbot_d_moveit_config/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,1 @@
+/home/ymzz/YMbot_ROS2/build/ymrobot_msgs/rosidl_typesupport_fastrtps_c/ymrobot_msgs/msg/detail/wake_up_word_setting__rosidl_typesupport_fastrtps_c.h

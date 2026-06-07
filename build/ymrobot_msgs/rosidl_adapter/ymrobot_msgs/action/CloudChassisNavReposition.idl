@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/CloudChassisNavReposition.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "goal")
+    struct CloudChassisNavReposition_Goal {
+      string reposition_pose_name;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct CloudChassisNavReposition_Result {
+      boolean success;
+
+      string message;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct CloudChassisNavReposition_Feedback {
+      boolean status;
+
+      string message;
+    };
+  };
+};

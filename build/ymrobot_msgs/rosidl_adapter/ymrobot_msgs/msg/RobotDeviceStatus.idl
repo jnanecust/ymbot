@@ -1,0 +1,58 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/RobotDeviceStatus.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "电池状态")
+    struct RobotDeviceStatus {
+      @verbatim (language="comment", text=
+        "电池电压（单位：V）")
+      float battery_voltage;
+
+      @verbatim (language="comment", text=
+        "电池剩余电量百分比（范围：0.0-100.0）")
+      float battery_percentage;
+
+      @verbatim (language="comment", text=
+        "电池温度（可选，单位：摄氏度）")
+      float battery_temperature;
+
+      @verbatim (language="comment", text=
+        "电机状态" "\n"
+        "电机转速（单位：RPM）")
+      int32 left_motor_speed;
+
+      @verbatim (language="comment", text=
+        "电机转速（单位：RPM）")
+      int32 right_motor_speed;
+
+      float left_motor_temperature;
+
+      float right_motor_temperature;
+
+      @verbatim (language="comment", text=
+        "系统状态" "\n"
+        "CPU使用率（范围：0.0-100.0）")
+      float cpu_usage;
+
+      @verbatim (language="comment", text=
+        "内存占用率（范围：0.0-100.0）")
+      float memory_usage;
+
+      @verbatim (language="comment", text=
+        "CPU温度（单位：摄氏度）")
+      float cpu_temperature;
+
+      @verbatim (language="comment", text=
+        "磁盘剩余空间占比（范围：0.0-100.0）")
+      float disk_space_percentage;
+
+      @verbatim (language="comment", text=
+        "主控板温度（单位：摄氏度）")
+      float mainboard_temperature;
+    };
+  };
+};

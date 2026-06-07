@@ -1,0 +1,40 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/BTNodeTaskState.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "BTNodeState.msg")
+    struct BTNodeTaskState {
+      @verbatim (language="comment", text=
+        "任务类型 -- 1. guide_explanation 类似行为树的任务类型")
+      string task_id;
+
+      @verbatim (language="comment", text=
+        "任务类型 -- 1. guide_explanation 类似行为树的任务类型")
+      string task_type;
+
+      @verbatim (language="comment", text=
+        "节点名称 导航、语音播报、拍照、录像")
+      string node_name;
+
+      @verbatim (language="comment", text=
+        "started, successed, failure, running")
+      string node_task_state;
+
+      @verbatim (language="comment", text=
+        "错误代码")
+      string node_task_error;
+
+      @verbatim (language="comment", text=
+        "错误描述")
+      string node_task_error_message;
+
+      @verbatim (language="comment", text=
+        "动作内容")
+      string node_action_content;
+    };
+  };
+};

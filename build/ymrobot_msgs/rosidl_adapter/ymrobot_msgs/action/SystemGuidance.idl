@@ -1,0 +1,38 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/SystemGuidance.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "goal")
+    struct SystemGuidance_Goal {
+      @verbatim (language="comment", text=
+        "表情任务类型 0--播放固定音频。 1: 合成音频 。 2: 删除固定音频  3：上传对话记录  4. 播放在线音频 -- 通过“string类型”  5. 在线在下载音频")
+      uint8 system_guidance_task_type;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct SystemGuidance_Result {
+      @verbatim (language="comment", text=
+        "是否成功与否")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "错误或者成功的原因")
+      string message;
+
+      @verbatim (language="comment", text=
+        "总时间")
+      double total_elapsed_time;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct SystemGuidance_Feedback {
+      string message;
+
+      double total_elapsed_time;
+    };
+  };
+};

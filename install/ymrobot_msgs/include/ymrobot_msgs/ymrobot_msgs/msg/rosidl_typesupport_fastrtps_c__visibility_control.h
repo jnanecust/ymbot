@@ -1,0 +1,1 @@
+/home/ymzz/YMbot_ROS2/build/ymrobot_msgs/rosidl_typesupport_fastrtps_c/ymrobot_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h

@@ -1,0 +1,10 @@
+package.xml
+setup.cfg
+setup.py
+../../build/start_robot/vr_receiver_tcp.egg-info/PKG-INFO
+../../build/start_robot/vr_receiver_tcp.egg-info/SOURCES.txt
+../../build/start_robot/vr_receiver_tcp.egg-info/dependency_links.txt
+../../build/start_robot/vr_receiver_tcp.egg-info/entry_points.txt
+../../build/start_robot/vr_receiver_tcp.egg-info/requires.txt
+../../build/start_robot/vr_receiver_tcp.egg-info/top_level.txt
+../../build/start_robot/vr_receiver_tcp.egg-info/zip-safe

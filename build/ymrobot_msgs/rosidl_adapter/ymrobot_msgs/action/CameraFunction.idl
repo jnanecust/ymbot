@@ -1,0 +1,58 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/CameraFunction.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "goal")
+    struct CameraFunction_Goal {
+      @verbatim (language="comment", text=
+        "相机任务类型 0：拍照 1：录制视频 2:检测目标")
+      uint8 camera_task_type;
+
+      @verbatim (language="comment", text=
+        "相机拍照数量")
+      uint8 number_of_photos;
+
+      @verbatim (language="comment", text=
+        "拍照间隔 ms")
+      uint8 photos_interval;
+
+      @verbatim (language="comment", text=
+        "录制视频时长")
+      uint8 video_recording_time;
+
+      @verbatim (language="comment", text=
+        "目标名称")
+      string target_name;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct CameraFunction_Result {
+      @verbatim (language="comment", text=
+        "是否成功与否")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "错误或者成功的原因")
+      string message;
+
+      @verbatim (language="comment", text=
+        "总时间")
+      double total_elapsed_time;
+
+      @verbatim (language="comment", text=
+        "目标位置列表 [x, y, z, ...]")
+      sequence<double> target_pose_list;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct CameraFunction_Feedback {
+      string message;
+
+      double total_elapsed_time;
+    };
+  };
+};

@@ -1,0 +1,4 @@
+uint8 reboot_type  #重启类似  0:关机 1:断电重启 2:软件重启
+---
+bool success
+string message

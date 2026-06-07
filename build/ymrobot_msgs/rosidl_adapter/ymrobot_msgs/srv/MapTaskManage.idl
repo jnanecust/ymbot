@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from ymrobot_msgs/srv/MapTaskManage.srv
+// generated code does not contain a copyright notice
+
+#include "ymrobot_msgs/msg/MapTaskCommand.idl"
+
+module ymrobot_msgs {
+  module srv {
+    struct MapTaskManage_Request {
+      ymrobot_msgs::msg::MapTaskCommand map_task;
+
+      string map_id;
+
+      string map_name;
+
+      string pcd_name;
+
+      string pgm_name;
+    };
+    struct MapTaskManage_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

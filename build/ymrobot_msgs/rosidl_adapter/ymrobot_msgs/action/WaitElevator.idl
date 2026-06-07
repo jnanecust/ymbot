@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/WaitElevator.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Goal: ")
+    struct WaitElevator_Goal {
+      float over_time;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct WaitElevator_Result {
+      boolean success;
+
+      string message;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct WaitElevator_Feedback {
+      float time_elapsed;
+    };
+  };
+};

@@ -1,0 +1,31 @@
+[0.720s] Invoking command in '/home/ymzz/YMbot_ROS2/src/vr_receiver_tcp': CONDA_PROMPT_MODIFIER=(lerobot) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/prefix_override:/home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages:${PYTHONPATH} /home/ymzz/anaconda3/envs/lerobot/bin/python3.12 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vr_receiver_tcp build --build-base /home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/build install --record /home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/install.log --single-version-externally-managed install_data
+[0.854s] /home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[0.854s]   warnings.warn(msg)
+[0.944s] running egg_info
+[0.959s] writing ../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/PKG-INFO
+[0.959s] writing dependency_links to ../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/dependency_links.txt
+[0.959s] writing entry points to ../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/entry_points.txt
+[0.959s] writing requirements to ../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/requires.txt
+[0.960s] writing top-level names to ../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/top_level.txt
+[0.995s] reading manifest file '../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/SOURCES.txt'
+[0.996s] writing manifest file '../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info/SOURCES.txt'
+[0.996s] running build
+[0.996s] running build_py
+[0.996s] copying vr_receiver_tcp/vr_receiver_tcp.py -> /home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/build/lib/vr_receiver_tcp
+[0.997s] running install
+[1.000s] running install_lib
+[1.018s] copying /home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/build/lib/vr_receiver_tcp/vr_receiver_tcp.py -> /home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages/vr_receiver_tcp
+[1.018s] byte-compiling /home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages/vr_receiver_tcp/vr_receiver_tcp.py to vr_receiver_tcp.cpython-312.pyc
+[1.019s]   File "/home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages/vr_receiver_tcp/vr_receiver_tcp.py", line 44
+[1.019s]     self._current_twist = Twist():
+[1.019s]                                  ^
+[1.020s] SyntaxError: invalid syntax
+[1.020s] 
+[1.020s] running install_data
+[1.020s] running install_egg_info
+[1.036s] removing '/home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages/vr_receiver_tcp-0.0.0-py3.12.egg-info' (and everything under it)
+[1.036s] Copying ../../build/vr_receiver_tcp/vr_receiver_tcp.egg-info to /home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages/vr_receiver_tcp-0.0.0-py3.12.egg-info
+[1.037s] running install_scripts
+[1.128s] Installing vr_receiver_tcp script to /home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/vr_receiver_tcp
+[1.128s] writing list of installed files to '/home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/install.log'
+[1.171s] Invoked command in '/home/ymzz/YMbot_ROS2/src/vr_receiver_tcp' returned '0': CONDA_PROMPT_MODIFIER=(lerobot) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/prefix_override:/home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/vr_receiver_tcp/lib/python3.12/site-packages:${PYTHONPATH} /home/ymzz/anaconda3/envs/lerobot/bin/python3.12 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vr_receiver_tcp build --build-base /home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/build install --record /home/ymzz/YMbot_ROS2/build/vr_receiver_tcp/install.log --single-version-externally-managed install_data

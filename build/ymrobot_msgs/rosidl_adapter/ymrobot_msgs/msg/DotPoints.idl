@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/DotPoints.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    module DotPoints_Constants {
+      @verbatim (language="comment", text=
+        "保存点位")
+      const uint8 SAVE = 0;
+      @verbatim (language="comment", text=
+        "删除点位")
+      const uint8 DELETE = 1;
+    };
+    struct DotPoints {
+      @verbatim (language="comment", text=
+        "打点动作")
+      uint8 action;
+
+      @verbatim (language="comment", text=
+        "坐标点位名称")
+      string pose_name;
+
+      @verbatim (language="comment", text=
+        "地图名称")
+      string map_name;
+
+      @verbatim (language="comment", text=
+        "点位简单描述")
+      string pose_describe;
+    };
+  };
+};

@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/srv/Detect_Request",
+      "fields": [
+        {
+          "name": "detect_target_name",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/srv/Detect_Request",
+      "hash_string": "RIHS01_d4461fbf23783ccd57fab2a4ed9132d90e6fdfdba652496f1752ee7046d431a2"
+    }
+  ]
+}

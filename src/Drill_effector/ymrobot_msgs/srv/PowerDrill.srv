@@ -1,0 +1,4 @@
+uint8                       power_drill_task_type   # 抓取任务类型  0--打开  1--关闭  2--正转 3--反转
+---
+bool                        success            #是否成功           
+string                      message            #消息反馈  --失败原因 成功了 啥的........

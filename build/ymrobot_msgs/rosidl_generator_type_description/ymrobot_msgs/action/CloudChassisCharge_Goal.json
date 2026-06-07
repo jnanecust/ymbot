@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/action/CloudChassisCharge_Goal",
+      "fields": [
+        {
+          "name": "charge_point_name",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/action/CloudChassisCharge_Goal",
+      "hash_string": "RIHS01_c1d12409bca5ccdf170f9a9d360eea8898b22c0cabf007d4aa2ce64ff1f8ab84"
+    }
+  ]
+}

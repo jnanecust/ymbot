@@ -1,0 +1,109 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/EmojiFixed.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    module EmojiFixed_Constants {
+      @verbatim (language="comment", text=
+        "无命令")
+      const uint8 NONE = 0;
+      @verbatim (language="comment", text=
+        "暂停操作")
+      const uint8 PAUSE = 1;
+      @verbatim (language="comment", text=
+        "恢复操作")
+      const uint8 RESUME = 2;
+      @verbatim (language="comment", text=
+        "取消任务操作")
+      const uint8 CANCLE = 3;
+      @verbatim (language="comment", text=
+        "进入休眠模式")
+      const uint8 WAIT = 4;
+      @verbatim (language="comment", text=
+        "从休眠模式唤醒")
+      const uint8 FINISH_WAIT = 5;
+      @verbatim (language="comment", text=
+        "回冲")
+      const uint8 CHARGE = 6;
+      @verbatim (language="comment", text=
+        "结束回冲")
+      const uint8 FINISH_CHARGE = 7;
+      @verbatim (language="comment", text=
+        "建图")
+      const uint8 BUILD_MAP = 8;
+      @verbatim (language="comment", text=
+        "更新地图")
+      const uint8 UPLOAD_MAP = 9;
+      @verbatim (language="comment", text=
+        "下载地图")
+      const uint8 DOWNLOAD_MAP = 10;
+      @verbatim (language="comment", text=
+        "保存地图")
+      const uint8 SAVE_MAP = 11;
+      @verbatim (language="comment", text=
+        "重定位")
+      const uint8 RELOCALIZE = 12;
+      @verbatim (language="comment", text=
+        "导航")
+      const uint8 NAVIGATION = 13;
+      @verbatim (language="comment", text=
+        "多点导航")
+      const uint8 MULIT_POINTS_NAVIGATION = 14;
+      @verbatim (language="comment", text=
+        "跨楼层导航（只适合单点）")
+      const uint8 MULIT_FLOOR_NAVIGATION = 15;
+      @verbatim (language="comment", text=
+        "云平台手动控制移动")
+      const uint8 CLOUD_MANUAL_CONTROL_MOVE = 16;
+      @verbatim (language="comment", text=
+        "打点")
+      const uint8 DOT = 17;
+      @verbatim (language="comment", text=
+        "遥控控制移动")
+      const uint8 MANUAL_CONTROL_MOVE = 18;
+      @verbatim (language="comment", text=
+        "执行行为树")
+      const uint8 EXE_BEHAVIOR_TREE = 19;
+      @verbatim (language="comment", text=
+        "末端变化（笛卡尔坐标）导航")
+      const uint8 PLACE_CARTESIAN = 20;
+      @verbatim (language="comment", text=
+        "关节变化导航")
+      const uint8 PLACE_JOINT = 21;
+      @verbatim (language="comment", text=
+        "上肢预设动作执行")
+      const uint8 PLACE_FIXED = 22;
+      @verbatim (language="comment", text=
+        "上肢控制模式切换")
+      const uint8 PLACE_CONTROL_MODE = 23;
+      @verbatim (language="comment", text=
+        "夹爪动作")
+      const uint8 GRASP = 24;
+      @verbatim (language="comment", text=
+        "相机")
+      const uint8 CAMERA = 25;
+      @verbatim (language="comment", text=
+        "播放固定音频")
+      const uint8 PLAY_FIX_AUDIO = 26;
+      @verbatim (language="comment", text=
+        "语音转文字（在线和离线都有）")
+      const uint8 SPEECH_2_TXT = 27;
+      @verbatim (language="comment", text=
+        "表情预设执行动作")
+      const uint8 EXPRESSION_FIXED = 28;
+      @verbatim (language="comment", text=
+        "唤醒")
+      const uint8 WAKE_UP = 29;
+      @verbatim (language="comment", text=
+        "远程关机")
+      const uint8 POWER_OFF = 30;
+    };
+    struct EmojiFixed {
+      @verbatim (language="comment", text=
+        "命令代码")
+      uint8 code;
+    };
+  };
+};

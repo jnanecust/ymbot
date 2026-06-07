@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_Goal",
+      "fields": [
+        {
+          "name": "fused_mode",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/action/DynamicFusParameters_Goal",
+      "hash_string": "RIHS01_3616c354c5f69d4c8d1b207a57ec4c8556f247c165e0c064a2d511c2b5524058"
+    }
+  ]
+}

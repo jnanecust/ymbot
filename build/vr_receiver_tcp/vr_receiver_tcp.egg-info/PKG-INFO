@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: vr_receiver_tcp
+Version: 0.0.0
+Summary: TODO: Package description
+Maintainer: ymzz-robot
+Maintainer-email: feilong_wang0707@163.com
+License: Apache-2.0
+Requires-Dist: setuptools
+Dynamic: license
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: summary

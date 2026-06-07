@@ -1,0 +1,5 @@
+string                      detect_target_name        # 1:需要识别目标的名称  string类型  
+---
+bool                        success            #是否成功           
+string                      message            #消息反馈  --失败原因 成功了 啥的........
+geometry_msgs/PoseStamped   target_position            # 反馈目标三维位置

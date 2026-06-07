@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/action/SystemGuidance_Goal",
+      "fields": [
+        {
+          "name": "system_guidance_task_type",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/action/SystemGuidance_Goal",
+      "hash_string": "RIHS01_3d2ffea23d4a0194d7ae37ff58a17aca41624243730fbd9091569819a14e212c"
+    }
+  ]
+}

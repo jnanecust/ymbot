@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/ResquestMoveFloor.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "融合方式")
+    struct ResquestMoveFloor_Goal {
+      @verbatim (language="comment", text=
+        "0 ：  1：轮速计为主模式")
+      uint8 floor;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct ResquestMoveFloor_Result {
+      boolean success;
+
+      string message;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct ResquestMoveFloor_Feedback {
+      string message;
+
+      boolean status;
+    };
+  };
+};

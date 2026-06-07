@@ -1,0 +1,26 @@
+[0.642s] Invoking command in '/home/ymzz/YMbot_ROS2/src/start_robot': CONDA_PROMPT_MODIFIER=(lerobot) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/start_robot/prefix_override:/home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages:${PYTHONPATH} /home/ymzz/anaconda3/envs/lerobot/bin/python3.12 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/start_robot build --build-base /home/ymzz/YMbot_ROS2/build/start_robot/build install --record /home/ymzz/YMbot_ROS2/build/start_robot/install.log --single-version-externally-managed install_data
+[0.880s] running egg_info
+[0.893s] writing ../../build/start_robot/start_robot.egg-info/PKG-INFO
+[0.894s] writing dependency_links to ../../build/start_robot/start_robot.egg-info/dependency_links.txt
+[0.894s] writing entry points to ../../build/start_robot/start_robot.egg-info/entry_points.txt
+[0.894s] writing requirements to ../../build/start_robot/start_robot.egg-info/requires.txt
+[0.894s] writing top-level names to ../../build/start_robot/start_robot.egg-info/top_level.txt
+[0.928s] reading manifest file '../../build/start_robot/start_robot.egg-info/SOURCES.txt'
+[0.929s] writing manifest file '../../build/start_robot/start_robot.egg-info/SOURCES.txt'
+[0.929s] running build
+[0.929s] running build_py
+[0.929s] copying start_robot/__init__.py -> /home/ymzz/YMbot_ROS2/build/start_robot/build/lib/start_robot
+[0.929s] copying start_robot/real_lerobot_collector.py -> /home/ymzz/YMbot_ROS2/build/start_robot/build/lib/start_robot
+[0.930s] running install
+[0.934s] running install_lib
+[0.948s] copying /home/ymzz/YMbot_ROS2/build/start_robot/build/lib/start_robot/real_lerobot_collector.py -> /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot
+[0.948s] byte-compiling /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot/real_lerobot_collector.py to real_lerobot_collector.cpython-312.pyc
+[0.950s] running install_data
+[0.951s] copying launch/run.launch.py -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot/launch
+[0.951s] running install_egg_info
+[0.968s] removing '/home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot-0.0.0-py3.12.egg-info' (and everything under it)
+[0.968s] Copying ../../build/start_robot/start_robot.egg-info to /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot-0.0.0-py3.12.egg-info
+[0.968s] running install_scripts
+[1.042s] Installing real_lerobot_collector script to /home/ymzz/YMbot_ROS2/install/start_robot/lib/start_robot
+[1.042s] writing list of installed files to '/home/ymzz/YMbot_ROS2/build/start_robot/install.log'
+[1.073s] Invoked command in '/home/ymzz/YMbot_ROS2/src/start_robot' returned '0': CONDA_PROMPT_MODIFIER=(lerobot) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/start_robot/prefix_override:/home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages:${PYTHONPATH} /home/ymzz/anaconda3/envs/lerobot/bin/python3.12 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/start_robot build --build-base /home/ymzz/YMbot_ROS2/build/start_robot/build install --record /home/ymzz/YMbot_ROS2/build/start_robot/install.log --single-version-externally-managed install_data

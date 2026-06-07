@@ -1,0 +1,38 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/CloudChassisMarkPoint.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    struct CloudChassisMarkPoint {
+      @verbatim (language="comment", text=
+        "导航模式  0: 目标名导航  1：坐标点导航  3:打点 4：充电 5：取消充电 2:重定位")
+      uint8 nav_mode;
+
+      @verbatim (language="comment", text=
+        "导航目标名")
+      string nav_target_name;
+
+      @verbatim (language="comment", text=
+        "导航目标x坐标")
+      float nav_target_x;
+
+      @verbatim (language="comment", text=
+        "导航目标y坐标")
+      float nav_target_y;
+
+      @verbatim (language="comment", text=
+        "导航目标yaw角度")
+      float nav_target_yaw;
+
+      @verbatim (language="comment", text=
+        "是否激活附近点")
+      boolean is_activate_the_nearby_point;
+
+      @verbatim (language="comment", text=
+        "就近点半径")
+      float nearby_point_radius;
+    };
+  };
+};

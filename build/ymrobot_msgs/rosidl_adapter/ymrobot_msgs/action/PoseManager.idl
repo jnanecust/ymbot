@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/PoseManager.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "LoadMap.action" "\n"
+      "目标（请求）")
+    struct PoseManager_Goal {
+      string pose_name;
+
+      string map_name;
+
+      string pose_manager_type;
+
+      string pose_describe;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct PoseManager_Result {
+      boolean success;
+
+      string message;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct PoseManager_Feedback {
+      string message;
+
+      boolean status;
+    };
+  };
+};

@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/ControlMode.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    module ControlMode_Constants {
+      @verbatim (language="comment", text=
+        "shou")
+      const uint8 SHOU_DONG = 0;
+      @verbatim (language="comment", text=
+        "暂停操作")
+      const uint8 SHOU_DONG_CLOUD = 1;
+      @verbatim (language="comment", text=
+        "恢复操作")
+      const uint8 AUTO = 2;
+      @verbatim (language="comment", text=
+        "PID控制")
+      const uint8 PID = 3;
+    };
+    struct ControlMode {
+      @verbatim (language="comment", text=
+        "命令代码")
+      uint8 code;
+    };
+  };
+};

@@ -1,0 +1,66 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/AudioControl.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "goal")
+    struct AudioControl_Goal {
+      @verbatim (language="comment", text=
+        "表情任务类型 0--播放固定音频。 1: 合成音频 。 2: 删除固定音频  3：上传对话记录  4. 播放在线音频 -- 通过“string类型”  5. 在线在下载音频")
+      uint8 audio_task_type;
+
+      @verbatim (language="comment", text=
+        "播放固定音频  string类型 string类型的0")
+      string fixed_audio_name;
+
+      @verbatim (language="comment", text=
+        "音色 0：男  1：女生")
+      uint8 timbre;
+
+      @verbatim (language="comment", text=
+        "合成音频内容")
+      string synthetic_audio_txt;
+
+      @verbatim (language="comment", text=
+        "合成音频标题")
+      string synthetic_audio_title;
+
+      @verbatim (language="comment", text=
+        "删除固定音频")
+      string delete_fixed_audio;
+
+      @verbatim (language="comment", text=
+        "播放在线音频")
+      string play_online_audio;
+
+      @verbatim (language="comment", text=
+        "下载在线音频的url")
+      string download_online_audio_url;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct AudioControl_Result {
+      @verbatim (language="comment", text=
+        "是否成功与否")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "错误或者成功的原因")
+      string message;
+
+      @verbatim (language="comment", text=
+        "总时间")
+      double total_elapsed_time;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct AudioControl_Feedback {
+      string message;
+
+      double total_elapsed_time;
+    };
+  };
+};

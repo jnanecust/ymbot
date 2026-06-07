@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/DotPointsList.msg
+// generated code does not contain a copyright notice
+
+#include "ymrobot_msgs/msg/DotPoints.idl"
+
+module ymrobot_msgs {
+  module msg {
+    struct DotPointsList {
+      @verbatim (language="comment", text=
+        "打点列表")
+      sequence<ymrobot_msgs::msg::DotPoints> dot_points_list;
+    };
+  };
+};

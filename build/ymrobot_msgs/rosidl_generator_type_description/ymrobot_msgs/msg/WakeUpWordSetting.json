@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/msg/WakeUpWordSetting",
+      "fields": [
+        {
+          "name": "wake_up_word",
+          "type": {
+            "type_id": 161,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/msg/WakeUpWordSetting",
+      "hash_string": "RIHS01_a6e2dd532330fde1053500c43f823e3e4269367aa3b22e0f47815f8eeb0e6156"
+    }
+  ]
+}

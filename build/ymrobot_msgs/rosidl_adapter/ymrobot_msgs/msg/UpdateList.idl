@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/UpdateList.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    module UpdateList_Constants {
+      @verbatim (language="comment", text=
+        "点位管理")
+      const uint8 POSE_MANAGER = 0;
+      @verbatim (language="comment", text=
+        "上肢动作")
+      const uint8 UP_CLIMB_ACTION = 1;
+      @verbatim (language="comment", text=
+        "表情")
+      const uint8 EMOJI = 2;
+      @verbatim (language="comment", text=
+        "音频")
+      const uint8 AUDIO = 3;
+      @verbatim (language="comment", text=
+        "全部动作")
+      const uint8 ALL_ACTION = 4;
+    };
+    struct UpdateList {
+      @verbatim (language="comment", text=
+        "命令代码")
+      uint8 code;
+    };
+  };
+};

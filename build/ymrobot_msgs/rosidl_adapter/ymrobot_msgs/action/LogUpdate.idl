@@ -1,0 +1,38 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/LogUpdate.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "goal")
+    struct LogUpdate_Goal {
+      @verbatim (language="comment", text=
+        "日志文件路径")
+      string log_file_path;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct LogUpdate_Result {
+      @verbatim (language="comment", text=
+        "是否成功与否")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "错误或者成功的原因")
+      string message;
+
+      @verbatim (language="comment", text=
+        "总时间")
+      double total_elapsed_time;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct LogUpdate_Feedback {
+      string message;
+
+      double total_elapsed_time;
+    };
+  };
+};

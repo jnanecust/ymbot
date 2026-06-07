@@ -1,0 +1,1 @@
+/home/ymzz/YMbot_ROS2/src/control/ymbot_d_moveit_config/launch/static_virtual_joint_tfs.launch.py

@@ -1,0 +1,39 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from ymrobot_msgs/srv/CLoudNav.srv
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module srv {
+    struct CLoudNav_Request {
+      @verbatim (language="comment", text=
+        "导航模式  0: 目标名导航  1：坐标点导航")
+      uint8 nav_mode;
+
+      @verbatim (language="comment", text=
+        "导航目标名")
+      string nav_target_name;
+
+      @verbatim (language="comment", text=
+        "导航目标x坐标")
+      double nav_target_x;
+
+      @verbatim (language="comment", text=
+        "导航目标y坐标")
+      double nav_target_y;
+
+      @verbatim (language="comment", text=
+        "导航目标yaw角度")
+      double nav_target_yaw;
+    };
+    struct CLoudNav_Response {
+      @verbatim (language="comment", text=
+        "是否成功")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "消息反馈  --失败原因 成功了 啥的........")
+      string message;
+    };
+  };
+};

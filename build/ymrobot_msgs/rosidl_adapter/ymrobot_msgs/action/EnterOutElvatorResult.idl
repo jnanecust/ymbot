@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/EnterOutElvatorResult.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Goal: ")
+    struct EnterOutElvatorResult_Goal {
+      @verbatim (language="comment", text=
+        "是否进入或者出去成功")
+      boolean success;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct EnterOutElvatorResult_Result {
+      boolean success;
+
+      string message;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct EnterOutElvatorResult_Feedback {
+      float time_elapsed;
+    };
+  };
+};

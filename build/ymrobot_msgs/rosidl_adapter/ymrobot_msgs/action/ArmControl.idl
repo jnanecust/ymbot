@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/ArmControl.action
+// generated code does not contain a copyright notice
+
+#include "builtin_interfaces/msg/Duration.idl"
+#include "ymrobot_msgs/msg/Command.idl"
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "goal definition")
+    struct ArmControl_Goal {
+      ymrobot_msgs::msg::Command command;
+    };
+    @verbatim (language="comment", text=
+      "result definition")
+    struct ArmControl_Result {
+      sequence<uint8> results;
+
+      builtin_interfaces::msg::Duration total_elapsed_time;
+    };
+    @verbatim (language="comment", text=
+      "feedback")
+    struct ArmControl_Feedback {
+      builtin_interfaces::msg::Duration total_elapsed_time;
+    };
+  };
+};

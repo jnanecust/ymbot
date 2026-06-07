@@ -1,0 +1,242 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-2f2de4e98ed2e599ae1f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "ymrobot_msgs__py",
+					"jsonFile" : "directory-ymrobot_msgs__py-6d33d96b285e2130812c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/ymzz/YMbot_ROS2/build/ymrobot_msgs/ymrobot_msgs__py",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "ymrobot_msgs",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_ymrobot_msgs_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_ymrobot_msgs_egg-5556ff43b6e3b40543b9.json",
+					"name" : "ament_cmake_python_build_ymrobot_msgs_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_ymrobot_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_ymrobot_msgs-4cceb70e8b7df1350ba6.json",
+					"name" : "ament_cmake_python_symlink_ymrobot_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-e375cb7f54a3346a9083.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs-51176ae20b4bc67bac34.json",
+					"name" : "ymrobot_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs__cpp-ad520c1bd0e4c335fd04.json",
+					"name" : "ymrobot_msgs__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ymrobot_msgs__py::@69c3ef9acab37444f17b",
+					"jsonFile" : "target-ymrobot_msgs__py-4401c5badab65f5a45ee.json",
+					"name" : "ymrobot_msgs__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs__rosidl_generator_c-f38942ec2d86611f2d2a.json",
+					"name" : "ymrobot_msgs__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs__rosidl_generator_py-29d9e7d39cc1ae101c00.json",
+					"name" : "ymrobot_msgs__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs__rosidl_generator_type_description-25b22ecdf35d8b1b8593.json",
+					"name" : "ymrobot_msgs__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs__rosidl_typesupport_c-bf48101b879bc437dd99.json",
+					"name" : "ymrobot_msgs__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs__rosidl_typesupport_cpp-c6eeffda5129da113b7c.json",
+					"name" : "ymrobot_msgs__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs__rosidl_typesupport_fastrtps_c-7ca15a119d3cae09e87e.json",
+					"name" : "ymrobot_msgs__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs__rosidl_typesupport_fastrtps_cpp-23ec9da461babf8c6013.json",
+					"name" : "ymrobot_msgs__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs__rosidl_typesupport_introspection_c-c88489183683872c9e10.json",
+					"name" : "ymrobot_msgs__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs__rosidl_typesupport_introspection_cpp-175555b1784e7813d144.json",
+					"name" : "ymrobot_msgs__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs_s__rosidl_typesupport_c-53c74533321d4d487110.json",
+					"name" : "ymrobot_msgs_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs_s__rosidl_typesupport_fastrtps_c-6fd2395eafb8f6f25a18.json",
+					"name" : "ymrobot_msgs_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs_s__rosidl_typesupport_introspection_c-dec8fa97c258de29be03.json",
+					"name" : "ymrobot_msgs_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ymrobot_msgs_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ymrobot_msgs_uninstall-e991602028d027948b25.json",
+					"name" : "ymrobot_msgs_uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ymzz/YMbot_ROS2/build/ymrobot_msgs",
+		"source" : "/home/ymzz/YMbot_ROS2/src/Drill_effector/ymrobot_msgs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

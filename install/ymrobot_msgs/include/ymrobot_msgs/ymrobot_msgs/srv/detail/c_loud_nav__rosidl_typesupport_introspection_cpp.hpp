@@ -1,0 +1,1 @@
+/home/ymzz/YMbot_ROS2/build/ymrobot_msgs/rosidl_typesupport_introspection_cpp/ymrobot_msgs/srv/detail/c_loud_nav__rosidl_typesupport_introspection_cpp.hpp

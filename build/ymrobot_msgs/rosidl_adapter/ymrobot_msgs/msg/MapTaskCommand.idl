@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/MapTaskCommand.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    module MapTaskCommand_Constants {
+      @verbatim (language="comment", text=
+        "0x00")
+      const uint8 NONE = 0;
+      @verbatim (language="comment", text=
+        "0x01")
+      const uint8 PCD2PGM = 1;
+      @verbatim (language="comment", text=
+        "0x02")
+      const uint8 LOAD_MAP = 2;
+    };
+    struct MapTaskCommand {
+      uint8 code;
+    };
+  };
+};

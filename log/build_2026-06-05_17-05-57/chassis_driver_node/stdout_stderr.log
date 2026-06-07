@@ -1,0 +1,21 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/chassis_driver_node.dir/src/chassis_driver_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable chassis_driver_node[0m
+[100%] Built target chassis_driver_node
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/lib/chassis_driver_node/chassis_driver_node
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/ament_index/resource_index/package_run_dependencies/chassis_driver_node
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/ament_index/resource_index/parent_prefix_path/chassis_driver_node
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/chassis_driver_node/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/chassis_driver_node/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/chassis_driver_node/environment/path.sh
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/chassis_driver_node/environment/path.dsv
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/chassis_driver_node/local_setup.bash
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/chassis_driver_node/local_setup.sh
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/chassis_driver_node/local_setup.zsh
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/chassis_driver_node/local_setup.dsv
+-- Symlinking: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/chassis_driver_node/package.dsv
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/ament_index/resource_index/packages/chassis_driver_node
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/chassis_driver_node/cmake/chassis_driver_nodeConfig.cmake
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/chassis_driver_node/cmake/chassis_driver_nodeConfig-version.cmake
+-- Up-to-date symlink: /home/ymzz/YMbot_ROS2/install/chassis_driver_node/share/chassis_driver_node/package.xml

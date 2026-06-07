@@ -1,0 +1,42 @@
+running develop
+Removing /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire-hand.egg-link (link to .)
+running egg_info
+writing ../../build/inspire_hand/inspire_hand.egg-info/PKG-INFO
+writing dependency_links to ../../build/inspire_hand/inspire_hand.egg-info/dependency_links.txt
+writing entry points to ../../build/inspire_hand/inspire_hand.egg-info/entry_points.txt
+writing requirements to ../../build/inspire_hand/inspire_hand.egg-info/requires.txt
+writing top-level names to ../../build/inspire_hand/inspire_hand.egg-info/top_level.txt
+reading manifest file '../../build/inspire_hand/inspire_hand.egg-info/SOURCES.txt'
+writing manifest file '../../build/inspire_hand/inspire_hand.egg-info/SOURCES.txt'
+running build
+running build_py
+copying inspire_hand/hand_grasp_state_pub.py -> /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand
+copying inspire_hand/reset_hand.py -> /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand
+copying inspire_hand/inspire_hand_sub.py -> /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand
+copying inspire_hand/utils/inspire_hand_new_api.py -> /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand/utils
+running install
+running install_lib
+creating /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand
+copying /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand/hand_grasp_state_pub.py -> /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand
+copying /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand/__init__.py -> /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand
+copying /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand/reset_hand.py -> /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand
+creating /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand/utils
+copying /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand/utils/inspire_hand_new_api.py -> /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand/utils
+copying /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand/utils/inspire_hand_api.py -> /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand/utils
+copying /home/ymzz/YMbot_ROS2/build/inspire_hand/build/lib/inspire_hand/inspire_hand_sub.py -> /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand
+byte-compiling /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand/hand_grasp_state_pub.py to hand_grasp_state_pub.cpython-312.pyc
+byte-compiling /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand/reset_hand.py to reset_hand.cpython-312.pyc
+byte-compiling /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand/utils/inspire_hand_new_api.py to inspire_hand_new_api.cpython-312.pyc
+byte-compiling /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand/utils/inspire_hand_api.py to inspire_hand_api.cpython-312.pyc
+byte-compiling /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand/inspire_hand_sub.py to inspire_hand_sub.cpython-312.pyc
+running install_data
+copying resource/inspire_hand -> /home/ymzz/YMbot_ROS2/install/inspire_hand/share/ament_index/resource_index/packages
+copying package.xml -> /home/ymzz/YMbot_ROS2/install/inspire_hand/share/inspire_hand
+running install_egg_info
+Copying ../../build/inspire_hand/inspire_hand.egg-info to /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/python3.12/site-packages/inspire_hand-0.0.1-py3.12.egg-info
+running install_scripts
+Installing hand_grasp_state_pub script to /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/inspire_hand
+Installing inspire_hand_sub script to /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/inspire_hand
+Installing single_hand_command script to /home/ymzz/YMbot_ROS2/install/inspire_hand/lib/inspire_hand
+writing list of installed files to '/home/ymzz/YMbot_ROS2/build/inspire_hand/install.log'

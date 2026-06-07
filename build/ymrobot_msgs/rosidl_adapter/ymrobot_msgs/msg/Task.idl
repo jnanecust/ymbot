@@ -1,0 +1,79 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/Task.msg
+// generated code does not contain a copyright notice
+
+#include "ymrobot_msgs/msg/BinaryData.idl"
+#include "ymrobot_msgs/msg/Command.idl"
+#include "ymrobot_msgs/msg/NavPoint.idl"
+
+module ymrobot_msgs {
+  module msg {
+    module Task_Constants {
+      @verbatim (language="comment", text=
+        "注册任务")
+      const uint8 REG = 0;
+      @verbatim (language="comment", text=
+        "任务管理")
+      const uint8 TASK_GUIDANCE = 1;
+      @verbatim (language="comment", text=
+        "行为树任务")
+      const uint8 BT_TASK = 2;
+      @verbatim (language="comment", text=
+        "底盘导航任务（自研）")
+      const uint8 CHSSIS = 3;
+      @verbatim (language="comment", text=
+        "云迹底盘导航任务")
+      const uint8 CLOUD_CHASSIS = 4;
+      @verbatim (language="comment", text=
+        "上肢任务")
+      const uint8 UP_LIMB = 5;
+      @verbatim (language="comment", text=
+        "视频图像任务")
+      const uint8 VIDEO_IMAGE = 6;
+      @verbatim (language="comment", text=
+        "语音任务")
+      const uint8 VOICE = 7;
+      @verbatim (language="comment", text=
+        "表情任务")
+      const uint8 EMOJI_TASK = 8;
+      @verbatim (language="comment", text=
+        "系统管理")
+      const uint8 SYSTEM_MANAGEMENT = 9;
+      @verbatim (language="comment", text=
+        "移动控制")
+      const uint8 MOVE_CONTROL = 10;
+    };
+    @verbatim (language="comment", text=
+      "Task type constants")
+    struct Task {
+      string platform_id;
+
+      string amr_id;
+
+      string task_id;
+
+      @default (value=0)
+      uint8 task_type;
+
+      uint8 control_mode;
+
+      sequence<ymrobot_msgs::msg::NavPoint> nav_points;
+
+      sequence<ymrobot_msgs::msg::Command> commands;
+
+      @verbatim (language="comment", text=
+        "behavior tree, either .xml files or texts")
+      @default (value="")
+      string behavior_tree;
+
+      @verbatim (language="comment", text=
+        "force reload of behavior tree")
+      @default (value=FALSE)
+      boolean reload;
+
+      string index;
+
+      ymrobot_msgs::msg::BinaryData binary_file;
+    };
+  };
+};

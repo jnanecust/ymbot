@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/msg/MapTaskCommand",
+      "fields": [
+        {
+          "name": "code",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/msg/MapTaskCommand",
+      "hash_string": "RIHS01_acc62232a785d3f5780d33c5eca3a8ddfb45c06dbea8febe42eb4fc20f7f0009"
+    }
+  ]
+}

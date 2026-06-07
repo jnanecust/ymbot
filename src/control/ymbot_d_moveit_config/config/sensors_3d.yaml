@@ -1,0 +1,9 @@
+# OccupancyMapMonitor 在 move_group 中总会被创建；若缺少 "sensors" 参数会报
+# "No 3D sensor plugin(s) defined"。若 sensors 为空列表会报 "List of sensors is empty!"。
+# 此处使用占位条目：sensor_plugin 以 ~ 开头时会被跳过（不加载深度插件、不订阅相机）。
+octomap_resolution: 0.05
+octomap_frame: base_link
+sensors:
+  - noop_depth
+noop_depth:
+  sensor_plugin: "~"

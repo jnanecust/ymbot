@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/action/LogUpdate_Goal",
+      "fields": [
+        {
+          "name": "log_file_path",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/action/LogUpdate_Goal",
+      "hash_string": "RIHS01_b0baeb73e83545664b10e4a1ace7aed71cb0d5c6e293e65c91338a29f6411ea5"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from ymrobot_msgs/srv/Detect.srv
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/PoseStamped.idl"
+
+module ymrobot_msgs {
+  module srv {
+    struct Detect_Request {
+      @verbatim (language="comment", text=
+        "1:需要识别目标的名称  string类型")
+      string detect_target_name;
+    };
+    struct Detect_Response {
+      @verbatim (language="comment", text=
+        "是否成功")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "消息反馈  --失败原因 成功了 啥的........")
+      string message;
+
+      @verbatim (language="comment", text=
+        "反馈目标三维位置")
+      geometry_msgs::msg::PoseStamped target_position;
+    };
+  };
+};

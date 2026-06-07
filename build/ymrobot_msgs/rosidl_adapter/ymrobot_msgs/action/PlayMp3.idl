@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/PlayMp3.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Request")
+    struct PlayMp3_Goal {
+      string mp3_file_path;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct PlayMp3_Result {
+      boolean success;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct PlayMp3_Feedback {
+      string status;
+    };
+  };
+};

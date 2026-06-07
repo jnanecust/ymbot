@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/CloudChassisCharge.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "goal")
+    struct CloudChassisCharge_Goal {
+      @verbatim (language="comment", text=
+        "充电桩名称")
+      string charge_point_name;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct CloudChassisCharge_Result {
+      @verbatim (language="comment", text=
+        "是否成功")
+      boolean success;
+
+      string message;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct CloudChassisCharge_Feedback {
+      boolean status;
+
+      string message;
+    };
+  };
+};

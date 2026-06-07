@@ -1,0 +1,68 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ymrobot_msgs/msg/CloudChassisStatus.msg
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "云迹底盘状态信息msg")
+    struct CloudChassisStatus {
+      @verbatim (language="comment", text=
+        "充电状态")
+      boolean charge_state;
+
+      @verbatim (language="comment", text=
+        "软急停状态 true->急停中，false->非急停中")
+      boolean soft_estop_state;
+
+      @verbatim (language="comment", text=
+        "硬急停状态 true->急停中，false->非急停中")
+      boolean hard_estop_state;
+
+      @verbatim (language="comment", text=
+        "急停状态 true->急停中，false->非急停中")
+      boolean estop_state;
+
+      @verbatim (language="comment", text=
+        "电量百分比")
+      uint8 power_percent;
+
+      @verbatim (language="comment", text=
+        "当前位置x")
+      double x;
+
+      @verbatim (language="comment", text=
+        "当前位置y")
+      double y;
+
+      @verbatim (language="comment", text=
+        "当前位置yaw")
+      double yaw;
+
+      @verbatim (language="comment", text=
+        "当前楼层  --  当前地图")
+      uint8 current_floor;
+
+      @verbatim (language="comment", text=
+        "错误码")
+      uint8 error_code;
+
+      @verbatim (language="comment", text=
+        "导航目标点")
+      string move_target;
+
+      @verbatim (language="comment", text=
+        "导航状态")
+      string move_status;
+
+      @verbatim (language="comment", text=
+        "机器人运行状态")
+      string running_status;
+
+      @verbatim (language="comment", text=
+        "目标楼层   -- 目标地图")
+      string target_floor;
+    };
+  };
+};

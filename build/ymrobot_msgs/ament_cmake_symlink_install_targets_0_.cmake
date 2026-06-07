@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/ymzz/YMbot_ROS2/build/ymrobot_msgs/rosidl_generator_py/ymrobot_msgs/ymrobot_msgs_s__rosidl_typesupport_fastrtps_c.so" "TARGETS" "ymrobot_msgs_s__rosidl_typesupport_fastrtps_c" "DESTINATION" "lib/python3.12/site-packages/ymrobot_msgs")

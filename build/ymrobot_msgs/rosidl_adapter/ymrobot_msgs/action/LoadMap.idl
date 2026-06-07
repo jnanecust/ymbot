@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from ymrobot_msgs/action/LoadMap.action
+// generated code does not contain a copyright notice
+
+
+module ymrobot_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "LoadMap.action" "\n"
+      "目标（请求）")
+    struct LoadMap_Goal {
+      string map_pgm;
+    };
+    @verbatim (language="comment", text=
+      "结果（响应）")
+    struct LoadMap_Result {
+      boolean success;
+
+      string message;
+    };
+    @verbatim (language="comment", text=
+      "反馈")
+    struct LoadMap_Feedback {
+      string message;
+
+      boolean status;
+    };
+  };
+};

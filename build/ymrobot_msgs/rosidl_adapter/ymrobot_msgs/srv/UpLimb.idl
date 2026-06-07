@@ -1,0 +1,40 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from ymrobot_msgs/srv/UpLimb.srv
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/PoseStamped.idl"
+
+module ymrobot_msgs {
+  module srv {
+    struct UpLimb_Request {
+      @verbatim (language="comment", text=
+        "上肢任务类型 0：末端变化笛卡尔  1：关节变化  2：预设动作变化  3：夹爪动作 4:直线运动规划")
+      uint8 up_limb_task_type;
+
+      @verbatim (language="comment", text=
+        "0 笛卡尔坐标下 导航点  -- 任务类型是0时候")
+      geometry_msgs::msg::PoseStamped position;
+
+      @verbatim (language="comment", text=
+        "1：关节变化，数据列表  关节1、关节2、关节3......")
+      sequence<double> place_joint_list;
+
+      @verbatim (language="comment", text=
+        "2: 预设动作变化，标志位，0--动作0  1---动作1")
+      uint8 action_fixed;
+
+      @verbatim (language="comment", text=
+        "3: 左右选择  0--左  1--右")
+      uint8 left_and_right_select;
+    };
+    struct UpLimb_Response {
+      @verbatim (language="comment", text=
+        "是否成功")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "消息反馈  --失败原因 成功了 啥的........")
+      string message;
+    };
+  };
+};

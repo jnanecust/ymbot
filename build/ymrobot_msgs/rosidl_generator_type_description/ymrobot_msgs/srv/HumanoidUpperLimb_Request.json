@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ymrobot_msgs/srv/HumanoidUpperLimb_Request",
+      "fields": [
+        {
+          "name": "upper_action_task_type",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "fixed_upper_action",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ymrobot_msgs/srv/HumanoidUpperLimb_Request",
+      "hash_string": "RIHS01_4ca95e7493e278014df4c88185a1a7cbe0d41eecdff727a974e3a28772694ec7"
+    }
+  ]
+}

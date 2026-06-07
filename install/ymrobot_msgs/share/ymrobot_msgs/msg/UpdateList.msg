@@ -1,0 +1,1 @@
+/home/ymzz/YMbot_ROS2/src/Drill_effector/ymrobot_msgs/msg/UpdateList.msg

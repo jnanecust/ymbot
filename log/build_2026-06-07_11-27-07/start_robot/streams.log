@@ -1,0 +1,32 @@
+[0.732s] Invoking command in '/home/ymzz/YMbot_ROS2/src/start_robot': CONDA_PROMPT_MODIFIER=(lerobot) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/start_robot/prefix_override:/home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages:${PYTHONPATH} /home/ymzz/anaconda3/envs/lerobot/bin/python3.12 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/start_robot build --build-base /home/ymzz/YMbot_ROS2/build/start_robot/build install --record /home/ymzz/YMbot_ROS2/build/start_robot/install.log --single-version-externally-managed install_data
+[0.943s] running egg_info
+[0.957s] writing ../../build/start_robot/start_robot.egg-info/PKG-INFO
+[0.957s] writing dependency_links to ../../build/start_robot/start_robot.egg-info/dependency_links.txt
+[0.958s] writing entry points to ../../build/start_robot/start_robot.egg-info/entry_points.txt
+[0.958s] writing requirements to ../../build/start_robot/start_robot.egg-info/requires.txt
+[0.958s] writing top-level names to ../../build/start_robot/start_robot.egg-info/top_level.txt
+[0.985s] reading manifest file '../../build/start_robot/start_robot.egg-info/SOURCES.txt'
+[0.986s] writing manifest file '../../build/start_robot/start_robot.egg-info/SOURCES.txt'
+[0.986s] running build
+[0.986s] running build_py
+[0.986s] copying start_robot/__init__.py -> /home/ymzz/YMbot_ROS2/build/start_robot/build/lib/start_robot
+[0.986s] copying start_robot/real_lerobot_collector.py -> /home/ymzz/YMbot_ROS2/build/start_robot/build/lib/start_robot
+[0.987s] running install
+[0.990s] running install_lib
+[1.004s] copying /home/ymzz/YMbot_ROS2/build/start_robot/build/lib/start_robot/real_lerobot_collector.py -> /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot
+[1.004s] byte-compiling /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot/real_lerobot_collector.py to real_lerobot_collector.cpython-312.pyc
+[1.006s] running install_data
+[1.006s] copying resource/start_robot -> /home/ymzz/YMbot_ROS2/install/start_robot/share/ament_index/resource_index/packages
+[1.006s] copying package.xml -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot
+[1.007s] copying launch/run.launch.py -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot/launch
+[1.007s] copying launch/rs_multi_camera_launch.py -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot/launch
+[1.007s] copying launch/gemini2L_recorder_launch.py -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot/launch
+[1.007s] copying launch/rs_single_camera_launch.py -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot/launch
+[1.007s] copying launch/rs_launch.py -> /home/ymzz/YMbot_ROS2/install/start_robot/share/start_robot/launch
+[1.007s] running install_egg_info
+[1.021s] removing '/home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot-0.0.0-py3.12.egg-info' (and everything under it)
+[1.022s] Copying ../../build/start_robot/start_robot.egg-info to /home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages/start_robot-0.0.0-py3.12.egg-info
+[1.022s] running install_scripts
+[1.098s] Installing real_lerobot_collector script to /home/ymzz/YMbot_ROS2/install/start_robot/lib/start_robot
+[1.098s] writing list of installed files to '/home/ymzz/YMbot_ROS2/build/start_robot/install.log'
+[1.119s] Invoked command in '/home/ymzz/YMbot_ROS2/src/start_robot' returned '0': CONDA_PROMPT_MODIFIER=(lerobot) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ymzz/YMbot_ROS2/build/start_robot/prefix_override:/home/ymzz/anaconda3/envs/lerobot/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/ymzz/YMbot_ROS2/install/start_robot/lib/python3.12/site-packages:${PYTHONPATH} /home/ymzz/anaconda3/envs/lerobot/bin/python3.12 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/start_robot build --build-base /home/ymzz/YMbot_ROS2/build/start_robot/build install --record /home/ymzz/YMbot_ROS2/build/start_robot/install.log --single-version-externally-managed install_data

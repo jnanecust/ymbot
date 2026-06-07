@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/inspire_hand/inspire_hand.egg-info/PKG-INFO
+../../build/inspire_hand/inspire_hand.egg-info/SOURCES.txt
+../../build/inspire_hand/inspire_hand.egg-info/dependency_links.txt
+../../build/inspire_hand/inspire_hand.egg-info/entry_points.txt
+../../build/inspire_hand/inspire_hand.egg-info/requires.txt
+../../build/inspire_hand/inspire_hand.egg-info/top_level.txt
+../../build/inspire_hand/inspire_hand.egg-info/zip-safe
+inspire_hand/__init__.py
+inspire_hand/hand_grasp_state_pub.py
+inspire_hand/inspire_hand_sub.py
+inspire_hand/reset_hand.py
+inspire_hand/utils/inspire_hand_new_api.py
+resource/inspire_hand
