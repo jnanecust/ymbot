@@ -18,8 +18,9 @@ ros2 launch ymbot_d_moveit_config demo.launch.py real_robot:=true
 ```
 
 colcon build --packages-select start_robot  vr_receiver_tcp
-ros2 launch start_robot run.launch.py end_effector:=hand dataset_root:=/home/ymzz/ymbot_lerobot_data/ dataset_task:="put mug cup on the plate"
+ros2 launch start_robot run.launch.py enable_policy_inference:=false enable_data_collection:=true end_effector:=hand dataset_root:=/home/ymzz/ymbot_lerobot_data/ dataset_task:="put mug cup on the plate"
 
+ros2 topic pub --once /record_command std_msgs/msg/String "{data: 'save'}"
 
 export HF_HOME=/home/ymzz/.cache/huggingface
 export HF_HUB_OFFLINE=1

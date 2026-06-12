@@ -1,16 +1,20 @@
 from pathlib import Path
+import math
+import shutil
+import sys
+from datetime import datetime
 
 import numpy as np
 import rclpy
 from rclpy.node import Node
+from rclpy.time import Time
+from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import Image, JointState
 from std_msgs.msg import Float32MultiArray, String
 from PIL import Image as PILImage
-from geometry_msgs.msg import Pose
+from tf2_ros import Buffer, TransformListener, TransformException
 
 from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
-from datetime import datetime
-import math
 
 
 DEFAULT_STATE_JOINTS = [
@@ -27,7 +31,7 @@ DEFAULT_STATE_JOINTS = [
     "Right_Arm_Joint4",
     "Right_Arm_Joint5",
     "Right_Arm_Joint6",
-    "Right_Arm_Joint7"
+    "Right_Arm_Joint7",
 ]
 
 DEFAULT_ACTION_JOINTS = DEFAULT_STATE_JOINTS.copy()
@@ -38,9 +42,9 @@ class RealLeRobotCollector(Node):
         super().__init__("real_lerobot_collector")
 
         self.declare_parameter("repo_id", "ymbot_real_vr")
-        self.declare_parameter("root", "/home/ymzz/ymbot_lerobot_data/")
+        self.declare_parameter("root", "/home/ymzz/ymbot_lerobot_data")
         self.declare_parameter("task", "VR teleoperation")
-        self.declare_parameter("fps", 20)
+        self.declare_parameter("fps", 10)
         self.declare_parameter("image_size", 256)
         self.declare_parameter("robot_type", "ymbot")
         self.declare_parameter("image_topic", "/top/top/color/image_raw")
@@ -55,6 +59,15 @@ class RealLeRobotCollector(Node):
         self.declare_parameter("left_hand_grasp_index", 0)
         self.declare_parameter("right_hand_grasp_index", 1)
         self.declare_parameter("obj_init_dim", 9)
+        self.declare_parameter("base_frame", "base_link")
+        self.declare_parameter("left_ee_frame", "Left_Arm_Link8")
+        self.declare_parameter("right_ee_frame", "Right_Arm_Link8")
+        # 数据集存在时的行为：默认加载已有数据集并继续追加 episode。
+        # 只有在明确传参 overwrite_existing_dataset:=true 时，才会删除旧数据重新创建。
+        self.declare_parameter("overwrite_existing_dataset", False)
+        # stop 后是否要求人工确认保存。默认开启。
+        # 如果节点在 ros2 launch 里运行且没有交互式 stdin，会自动改为等待 /record_command 的 save/discard。
+        self.declare_parameter("ask_save_after_stop", True)
         self.declare_parameter("left_ee_pose_topic", "/arm_left/ee_status")
         self.declare_parameter("right_ee_pose_topic", "/arm_right/ee_status")
 
@@ -69,16 +82,30 @@ class RealLeRobotCollector(Node):
         self.left_hand_grasp_index = int(self.get_parameter("left_hand_grasp_index").value)
         self.right_hand_grasp_index = int(self.get_parameter("right_hand_grasp_index").value)
         self.obj_init_dim = int(self.get_parameter("obj_init_dim").value)
+        self.base_frame = self.get_parameter("base_frame").value
+        self.left_ee_frame = self.get_parameter("left_ee_frame").value
+        self.right_ee_frame = self.get_parameter("right_ee_frame").value
+        self.overwrite_existing_dataset = bool(
+            self.get_parameter("overwrite_existing_dataset").value
+        )
+        self.ask_save_after_stop = bool(self.get_parameter("ask_save_after_stop").value)
 
         self.latest_image = None
         self.latest_left_wrist_image = None
         self.latest_right_wrist_image = None
+        self.latest_image_time = None
+        self.latest_left_wrist_image_time = None
+        self.latest_right_wrist_image_time = None
         self.latest_joint_positions = {}
         self.latest_grasp = []
         self.dataset = None
         self.recording = False
         self.frames_in_episode = 0
-        self.dataset = None
+        self.saved_episodes = 0
+        self.discarded_episodes = 0
+        self.pending_episode_decision = False
+        self.pending_episode_frames = 0
+        self.missing_input_report_count = 0
         self.current_dataset_root = None
 
         self.latest_left_ee_state = None
@@ -128,24 +155,15 @@ class RealLeRobotCollector(Node):
             10,
         )
 
-        self.create_subscription(
-            Pose,
-            self.get_parameter("left_ee_pose_topic").value,
-            self._left_ee_pose_cb,
-            10,
-        )
-
-        self.create_subscription(
-            Pose,
-            self.get_parameter("right_ee_pose_topic").value,
-            self._right_ee_pose_cb,
-            10,
-        )
+        self.tf_buffer = Buffer()
+        self.tf_listener = TransformListener(self.tf_buffer, self)
 
         self.timer = self.create_timer(1.0 / float(self.fps), self._record_tick)
         self.get_logger().info(
-            "LeRobot collector ready. Publish 'start'/'stop' on "
-            f"{self.get_parameter('record_command_topic').value}."
+            "LeRobot collector v5 ready. Publish 'start'/'stop' on "
+            f"{self.get_parameter('record_command_topic').value}. "
+            "After 'stop', save with terminal y/n when running interactively, "
+            "or publish 'save'/'discard' to the record command topic when running under ros2 launch."
         )
 
 
@@ -183,11 +201,8 @@ class RealLeRobotCollector(Node):
     def _right_ee_pose_cb(self, msg):
         self.latest_right_ee_state = self._pose_msg_to_xyz_rpy(msg)
 
-    def _ensure_dataset(self):
-        if self.dataset is not None:
-            return
-
-        features = {
+    def _features(self):
+        return {
             "observation.image": {
                 "dtype": "image",
                 "shape": (self.image_size, self.image_size, 3),
@@ -207,8 +222,18 @@ class RealLeRobotCollector(Node):
                 "dtype": "float32",
                 "shape": (12,),
                 "names": [
-                    "left_x", "left_y", "left_z", "left_roll", "left_pitch", "left_yaw",
-                    "right_x", "right_y", "right_z", "right_roll", "right_pitch", "right_yaw",
+                    "left_x",
+                    "left_y",
+                    "left_z",
+                    "left_roll",
+                    "left_pitch",
+                    "left_yaw",
+                    "right_x",
+                    "right_y",
+                    "right_z",
+                    "right_roll",
+                    "right_pitch",
+                    "right_yaw",
                 ],
             },
             "action": {
@@ -223,22 +248,95 @@ class RealLeRobotCollector(Node):
             },
         }
 
-        # if self.root.exists():
-        #     self.get_logger().info(f"Loading existing LeRobot dataset: {self.root}")
-        #     self.dataset = LeRobotDataset(self.repo_id, root=str(self.root))
-        #     return
+    def _missing_metadata_files(self, root: Path):
+        """
+        LeRobotDataset.create() 在没有成功 save_episode() 前，可能只写出一部分 meta。
+        这种“半成品目录”不能直接 LeRobotDataset(..., root=...) 加载，
+        否则会缺 tasks.jsonl / episodes.jsonl，并在离线模式下进一步触发 Hugging Face 查询。
+        """
+        required = [
+            root / "meta" / "info.json",
+            root / "meta" / "tasks.jsonl",
+        ]
+        return [path for path in required if not path.is_file()]
+
+    def _backup_invalid_dataset_root(self, reason: str):
+        """
+        root 已经存在但不是可加载的 LeRobotDataset 根目录时，自动备份，
+        避免 LeRobotDataset() 因 metadata 不完整而访问 Hugging Face 或直接崩溃。
+        """
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
-        dataset_root = self.root / timestamp
-        dataset_root.parent.mkdir(parents=True, exist_ok=True)
+        backup_root = self.root.with_name(f"{self.root.name}_invalid_backup_{timestamp}")
+        suffix = 1
+        while backup_root.exists():
+            backup_root = self.root.with_name(
+                f"{self.root.name}_invalid_backup_{timestamp}_{suffix}"
+            )
+            suffix += 1
 
-        self.current_dataset_root = dataset_root
+        shutil.move(str(self.root), str(backup_root))
+        self.get_logger().warn(
+            f"Existing dataset directory is not loadable: {reason}. "
+            f"Moved it to backup: {backup_root}"
+        )
 
-        self.dataset = LeRobotDataset.create(
+    def _ensure_dataset(self):
+        """
+        collect_data.py 风格：整个采集流程只对应一个 LeRobotDataset root。
+        每次 save_episode() 会向同一个 root 追加一个 episode，
+        不再为每组数据创建时间戳文件夹。
+        """
+        if self.dataset is not None:
+            return
+
+        if self.root.exists():
+            self.get_logger().info(f"Dataset directory already exists: {self.root}")
+
+            if self.overwrite_existing_dataset:
+                self.get_logger().warn(
+                    f"overwrite_existing_dataset=true, deleting old dataset: {self.root}"
+                )
+                shutil.rmtree(self.root)
+                self.dataset = self._create_dataset()
+                self.get_logger().info(f"Created new LeRobot dataset: {self.root}")
+                return
+
+            missing_meta = self._missing_metadata_files(self.root)
+            if missing_meta:
+                reason = "missing metadata files: " + ", ".join(str(p) for p in missing_meta)
+                self._backup_invalid_dataset_root(reason)
+                self.dataset = self._create_dataset()
+                self.get_logger().info(f"Created new LeRobot dataset: {self.root}")
+                return
+
+            # 这里不要 input()。ros2 launch 中 input() 很容易阻塞整个节点。
+            # 即使 meta 文件看起来存在，也用 try/except 防止损坏/半写入目录让节点崩溃。
+            try:
+                self.dataset = LeRobotDataset(self.repo_id, root=str(self.root))
+                self.get_logger().info(
+                    f"Loaded existing LeRobot dataset and will append episodes: {self.root}"
+                )
+                return
+            except Exception as exc:
+                self.get_logger().warn(
+                    f"Failed to load existing LeRobot dataset from {self.root}: {exc}"
+                )
+                self._backup_invalid_dataset_root(f"LeRobotDataset load failed: {exc}")
+                self.dataset = self._create_dataset()
+                self.get_logger().info(f"Created new LeRobot dataset: {self.root}")
+                return
+
+        self.dataset = self._create_dataset()
+        self.get_logger().info(f"Created new LeRobot dataset: {self.root}")
+
+    def _create_dataset(self):
+        self.root.parent.mkdir(parents=True, exist_ok=True)
+        return LeRobotDataset.create(
             repo_id=self.repo_id,
-            root=str(dataset_root),
+            root=str(self.root),
             robot_type=self.robot_type,
             fps=self.fps,
-            features=features,
+            features=self._features(),
             image_writer_threads=10,
             image_writer_processes=5,
         )
@@ -246,17 +344,30 @@ class RealLeRobotCollector(Node):
 
     def _record_command_cb(self, msg):
         command = msg.data.strip().lower()
-        print(f"command : {command}")
+        print(f"command: {command}", flush=True)
+
         if command == "start":
             self._start_recording()
         elif command == "stop":
-            self._stop_recording(save=True)
-        elif command in ("clear", "discard", "reset"):
-            self._stop_recording(save=False)
+            self._stop_recording(ask_user=self.ask_save_after_stop)
+        elif command in ("save", "y", "yes"):
+            self._finalize_pending_episode(save=True)
+        elif command in ("discard", "clear", "reset", "n", "no"):
+            if self.pending_episode_decision:
+                self._finalize_pending_episode(save=False)
+            else:
+                self._stop_recording(save=False, ask_user=False)
         else:
             self.get_logger().warn(f"Unknown record command: {msg.data}")
 
     def _start_recording(self):
+        if self.pending_episode_decision:
+            self.get_logger().warn(
+                "There is a stopped episode waiting for save/discard. "
+                "Publish 'save' or 'discard' first; new recording is ignored."
+            )
+            return
+
         if self.recording:
             self.get_logger().warn("Already recording.")
             return
@@ -267,24 +378,90 @@ class RealLeRobotCollector(Node):
         self.recording = True
         self.get_logger().info("Recording START")
 
-    def _stop_recording(self, save):
+    def _ask_save_episode_interactive(self):
+        while True:
+            try:
+                ans = input(
+                    f"Episode finished with {self.frames_in_episode} frames. "
+                    "Save this episode? (y/n) "
+                ).strip().lower()
+            except EOFError:
+                return None
+
+            if ans in ("y", "yes"):
+                return True
+            if ans in ("n", "no"):
+                return False
+            print("Please input y or n.", flush=True)
+
+    def _stop_recording(self, save=None, ask_user=False):
         if not self.recording:
             self.get_logger().warn("Stop requested, but collector is not recording.")
             return
         self.recording = False
         if self.dataset is None:
             return
-        print(f"save : {save} ， self.frames_in_episode {self.frames_in_episode}")
 
-        if save and self.frames_in_episode > 0:
+        if self.frames_in_episode <= 0:
+            self.dataset.clear_episode_buffer()
+            self.get_logger().warn("Recording STOP, but no frames were collected. Episode discarded.")
+            self.frames_in_episode = 0
+            return
+
+        if ask_user:
+            if sys.stdin is not None and sys.stdin.isatty():
+                decision = self._ask_save_episode_interactive()
+                if decision is not None:
+                    self._finalize_current_episode(save=decision)
+                    return
+
+            # ros2 launch 下通常没有可交互 stdin。不要阻塞节点，保留 episode buffer，
+            # 等待下一条 /record_command: save 或 discard。
+            self.pending_episode_decision = True
+            self.pending_episode_frames = self.frames_in_episode
+            self.get_logger().warn(
+                f"Recording STOP with {self.frames_in_episode} frames. "
+                "stdin is not interactive, so episode is pending. "
+                "Publish String data='save' or data='discard' on the record_command topic."
+            )
+            return
+
+        if save is None:
+            save = True
+        self._finalize_current_episode(save=save)
+
+    def _finalize_pending_episode(self, save):
+        if not self.pending_episode_decision:
+            self.get_logger().warn("No pending episode to save/discard.")
+            return
+        self._finalize_current_episode(save=save)
+
+    def _finalize_current_episode(self, save):
+        if self.dataset is None:
+            self.get_logger().warn("No dataset is available for saving/discarding.")
+            self.pending_episode_decision = False
+            self.pending_episode_frames = 0
+            self.frames_in_episode = 0
+            return
+
+        frames = self.frames_in_episode or self.pending_episode_frames
+        if save:
             self.dataset.save_episode()
-            self.get_logger().info(f"Recording STOP, saved {self.frames_in_episode} frames.")
+            self.saved_episodes += 1
+            self.get_logger().info(
+                f"Episode saved. saved_episodes={self.saved_episodes}, frames={frames}."
+            )
         else:
             self.dataset.clear_episode_buffer()
-            self.get_logger().info("Recording discarded.")
+            self.discarded_episodes += 1
+            self.get_logger().info(
+                f"Episode discarded. discarded_episodes={self.discarded_episodes}, frames={frames}."
+            )
+
         self.frames_in_episode = 0
-        self.dataset = None
-        self.current_dataset_root = None
+        self.pending_episode_frames = 0
+        self.pending_episode_decision = False
+        # 不要把 self.dataset 置 None；后续 episode 继续写入同一个 ROOT。
 
     def _record_tick(self):
         if not self.recording:
@@ -293,16 +470,15 @@ class RealLeRobotCollector(Node):
         if not self._has_required_inputs():
             return
 
+        self.latest_left_ee_state = self._lookup_ee_state(self.left_ee_frame)
+        self.latest_right_ee_state = self._lookup_ee_state(self.right_ee_frame)
         left_ee_state = self.latest_left_ee_state
         right_ee_state = self.latest_right_ee_state
 
         if left_ee_state is None or right_ee_state is None:
             return
 
-        state = np.concatenate(
-            (left_ee_state, right_ee_state),
-            axis=0,
-        ).astype(np.float32)
+        state = np.concatenate((left_ee_state, right_ee_state), axis=0).astype(np.float32)
 
         action_joints = self._joint_vector(self.action_joint_names)
 
@@ -358,6 +534,51 @@ class RealLeRobotCollector(Node):
             return float(self.latest_grasp[index])
         return 0.0
 
+    def _quat_to_rpy(self, qx, qy, qz, qw):
+        sinr_cosp = 2.0 * (qw * qx + qy * qz)
+        cosr_cosp = 1.0 - 2.0 * (qx * qx + qy * qy)
+        roll = math.atan2(sinr_cosp, cosr_cosp)
+
+        sinp = 2.0 * (qw * qy - qz * qx)
+        if abs(sinp) >= 1.0:
+            pitch = math.copysign(math.pi / 2.0, sinp)
+        else:
+            pitch = math.asin(sinp)
+
+        siny_cosp = 2.0 * (qw * qz + qx * qy)
+        cosy_cosp = 1.0 - 2.0 * (qy * qy + qz * qz)
+        yaw = math.atan2(siny_cosp, cosy_cosp)
+
+        return roll, pitch, yaw
+    def _lookup_ee_state(self, ee_frame):
+        """
+        返回机械臂真实末端在 base_frame 下的位姿：
+        [x, y, z, roll, pitch, yaw]
+        """
+        try:
+            trans = self.tf_buffer.lookup_transform(self.base_frame, ee_frame, Time())
+            t = trans.transform.translation
+            q = trans.transform.rotation
+            roll, pitch, yaw = self._quat_to_rpy(
+                float(q.x),
+                float(q.y),
+                float(q.z),
+                float(q.w),
+            )
+            return np.array(
+                [
+                    float(t.x),
+                    float(t.y),
+                    float(t.z),
+                    roll,
+                    pitch,
+                    yaw,
+                ],
+                dtype=np.float32,
+            )
+        except TransformException as e:
+            self.get_logger().warn(f"Failed to lookup TF {self.base_frame} -> {ee_frame}: {e}")
+            return None
     def _image_cb(self, msg):
         self.latest_image = self._ros_image_to_rgb(msg)
 
