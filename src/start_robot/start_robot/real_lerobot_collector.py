@@ -3,7 +3,7 @@ import math
 import shutil
 import sys
 from datetime import datetime
-
+import time
 import numpy as np
 import rclpy
 from rclpy.node import Node
@@ -110,6 +110,8 @@ class RealLeRobotCollector(Node):
 
         self.latest_left_ee_state = None
         self.latest_right_ee_state = None
+        self.start_time = 0
+        self.end_time = 0
 
         self.create_subscription(
             Image,
@@ -465,9 +467,11 @@ class RealLeRobotCollector(Node):
 
     def _record_tick(self):
         if not self.recording:
+            print("not self.recording", flush=True)
             return
 
         if not self._has_required_inputs():
+            print("not has required inputs ", flush=True)
             return
 
         self.latest_left_ee_state = self._lookup_ee_state(self.left_ee_frame)
@@ -476,6 +480,8 @@ class RealLeRobotCollector(Node):
         right_ee_state = self.latest_right_ee_state
 
         if left_ee_state is None or right_ee_state is None:
+            print("left_ee_state is None", flush=True)
+
             return
 
         state = np.concatenate((left_ee_state, right_ee_state), axis=0).astype(np.float32)
@@ -515,7 +521,13 @@ class RealLeRobotCollector(Node):
             },
             task=self.task,
         )
-
+        self.end_time = time.time()
+        time_long = self.end_time - self.start_time
+        print(f"time_long : {time_long}", flush=True)
+        self.start_time = self.end_time
+        self.latest_image = None
+        self.latest_left_wrist_image = None
+        self.latest_right_wrist_image = None
         self.frames_in_episode += 1
 
     def _has_required_inputs(self):
@@ -523,8 +535,7 @@ class RealLeRobotCollector(Node):
             self.latest_left_wrist_image is None or
             self.latest_right_wrist_image is None):
             return False
-        needed = set(self.state_joint_names) | set(self.action_joint_names)
-        return all(name in self.latest_joint_positions for name in needed)
+        return True
 
     def _joint_vector(self, names):
         return np.array([self.latest_joint_positions[name] for name in names], dtype=np.float32)
