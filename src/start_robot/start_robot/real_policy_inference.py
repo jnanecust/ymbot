@@ -4,6 +4,7 @@ import numpy as np
 import rclpy
 import torch
 import math
+import time
 from geometry_msgs.msg import Pose
 from PIL import Image as PILImage
 from rclpy.duration import Duration
@@ -12,9 +13,8 @@ from sensor_msgs.msg import Image, JointState
 from std_msgs.msg import Float32MultiArray, String
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
-from lerobot.common.datasets.lerobot_dataset import LeRobotDatasetMetadata
-from lerobot.common.datasets.utils import dataset_to_policy_features
-from lerobot.configs.types import FeatureType
+from rclpy.time import Time
+from tf2_ros import Buffer, TransformListener, TransformException
 
 
 DEFAULT_STATE_JOINTS = [
@@ -50,18 +50,15 @@ class RealPolicyInference(Node):
         self.declare_parameter("policy_path", "ckpt/smolvla_omy/checkpoints/last/pretrained_model")
         self.declare_parameter("task", "Put mug cup on the plate")
         self.declare_parameter("device", "cuda")
-        self.declare_parameter("fps", 20)
+        self.declare_parameter("fps", 2)
         self.declare_parameter("image_size", 256)
         self.declare_parameter("chunk_size", 5)
         self.declare_parameter("n_action_steps", 5)
         self.declare_parameter("num_steps", 50)
         self.declare_parameter("image_topic", "/top/top/color/image_raw")
-        self.declare_parameter("wrist_image_topic", "")
         self.declare_parameter("wrist_left_image_topic", "/left/left/color/image_rect_raw")
         self.declare_parameter("wrist_right_image_topic", "/right/right/color/image_rect_raw")
         self.declare_parameter("joint_state_topic", "/joint_states")
-        self.declare_parameter("left_ee_pose_topic", "/arm_left/ee_status")
-        self.declare_parameter("right_ee_pose_topic", "/arm_right/ee_status")
         self.declare_parameter("command_topic", "/policy_command")
         self.declare_parameter("left_arm_command_topic", "/left_arm_controller/joint_trajectory")
         self.declare_parameter("right_arm_command_topic", "/right_arm_controller/joint_trajectory")
@@ -70,9 +67,12 @@ class RealPolicyInference(Node):
         self.declare_parameter("action_joint_names", DEFAULT_ACTION_JOINTS)
         self.declare_parameter("left_arm_joint_names", DEFAULT_LEFT_ARM_JOINTS)
         self.declare_parameter("right_arm_joint_names", DEFAULT_RIGHT_ARM_JOINTS)
-        self.declare_parameter("trajectory_dt", 0.12)
+        self.declare_parameter("trajectory_dt", 0.5)
         self.declare_parameter("left_grasp_action_index", 7)
         self.declare_parameter("right_grasp_action_index", 15)
+        self.declare_parameter("base_frame", "base_link")
+        self.declare_parameter("left_ee_frame", "Left_Arm_Link8")
+        self.declare_parameter("right_ee_frame", "Right_Arm_Link8")
 
         self.tutorial_dir = Path(self.get_parameter("tutorial_dir").value).expanduser()
         self.policy_type = self.get_parameter("policy_type").value.lower().strip()
@@ -86,14 +86,16 @@ class RealPolicyInference(Node):
         self.chunk_size = int(self.get_parameter("chunk_size").value)
         self.n_action_steps = int(self.get_parameter("n_action_steps").value)
         self.num_steps = int(self.get_parameter("num_steps").value)
-        self.state_joint_names = list(self.get_parameter("state_joint_names").value)
         self.action_joint_names = list(self.get_parameter("action_joint_names").value)
         self.left_arm_joint_names = list(self.get_parameter("left_arm_joint_names").value)
         self.right_arm_joint_names = list(self.get_parameter("right_arm_joint_names").value)
         self.trajectory_dt = float(self.get_parameter("trajectory_dt").value)
         self.left_grasp_action_index = int(self.get_parameter("left_grasp_action_index").value)
         self.right_grasp_action_index = int(self.get_parameter("right_grasp_action_index").value)
-
+        self.base_frame = self.get_parameter("base_frame").value
+        self.left_ee_frame = self.get_parameter("left_ee_frame").value
+        self.right_ee_frame = self.get_parameter("right_ee_frame").value
+        self.last_publish_time = None
         self.latest_image = None
         self.latest_wrist_image = None
         self.latest_left_wrist_image = None
@@ -105,6 +107,9 @@ class RealPolicyInference(Node):
         self.policy_feature_keys = set()
         self.running = False
         self.step = 0
+        self.tf_buffer = Buffer()
+        self.tf_listener = TransformListener(self.tf_buffer, self)
+        self.inference_busy = False
 
         self.left_arm_pub = self.create_publisher(
             JointTrajectory,
@@ -123,9 +128,6 @@ class RealPolicyInference(Node):
         )
 
         self.create_subscription(Image, self.get_parameter("image_topic").value, self._image_cb, 10)
-        wrist_image_topic = self.get_parameter("wrist_image_topic").value
-        if wrist_image_topic:
-            self.create_subscription(Image, wrist_image_topic, self._wrist_image_cb, 10)
         self.create_subscription(
             Image,
             self.get_parameter("wrist_left_image_topic").value,
@@ -139,8 +141,6 @@ class RealPolicyInference(Node):
             10,
         )
         self.create_subscription(JointState, self.get_parameter("joint_state_topic").value, self._joint_state_cb, 10)
-        self.create_subscription(Pose, self.get_parameter("left_ee_pose_topic").value, self._left_ee_pose_cb, 10)
-        self.create_subscription(Pose, self.get_parameter("right_ee_pose_topic").value, self._right_ee_pose_cb, 10)
         self.create_subscription(String, self.get_parameter("command_topic").value, self._command_cb, 10)
 
         self.timer = self.create_timer(1.0 / float(self.fps), self._inference_tick)
@@ -153,10 +153,57 @@ class RealPolicyInference(Node):
         if path.is_absolute():
             return path
         return self.tutorial_dir / path
+    
+    def _quat_to_rpy(self, qx, qy, qz, qw):
+        sinr_cosp = 2.0 * (qw * qx + qy * qz)
+        cosr_cosp = 1.0 - 2.0 * (qx * qx + qy * qy)
+        roll = math.atan2(sinr_cosp, cosr_cosp)
+
+        sinp = 2.0 * (qw * qy - qz * qx)
+        if abs(sinp) >= 1.0:
+            pitch = math.copysign(math.pi / 2.0, sinp)
+        else:
+            pitch = math.asin(sinp)
+
+        siny_cosp = 2.0 * (qw * qz + qx * qy)
+        cosy_cosp = 1.0 - 2.0 * (qy * qy + qz * qz)
+        yaw = math.atan2(siny_cosp, cosy_cosp)
+
+        return roll, pitch, yaw
+
+    def _lookup_ee_state(self, ee_frame):
+        try:
+            trans = self.tf_buffer.lookup_transform(self.base_frame, ee_frame, Time())
+            t = trans.transform.translation
+            q = trans.transform.rotation
+            roll, pitch, yaw = self._quat_to_rpy(
+                float(q.x),
+                float(q.y),
+                float(q.z),
+                float(q.w),
+            )
+            return np.array(
+                [
+                    float(t.x),
+                    float(t.y),
+                    float(t.z),
+                    roll,
+                    pitch,
+                    yaw,
+                ],
+                dtype=np.float32,
+            )
+        except TransformException as e:
+            self.get_logger().warn(f"Failed to lookup TF {self.base_frame} -> {ee_frame}: {e}")
+            return None 
 
     def _load_policy(self):
         if self.policy is not None:
             return
+
+        from lerobot.common.datasets.lerobot_dataset import LeRobotDatasetMetadata
+        from lerobot.common.datasets.utils import dataset_to_policy_features
+        from lerobot.configs.types import FeatureType
 
         self.get_logger().info(f"Loading dataset metadata: {self.dataset_root}")
         metadata = LeRobotDatasetMetadata(self.dataset_repo_id, root=str(self.dataset_root))
@@ -236,18 +283,51 @@ class RealPolicyInference(Node):
         self.get_logger().info("Policy inference STOP")
 
     def _inference_tick(self):
-        if not self.running or self.policy is None:
+        if self.inference_busy:
             return
-        if not self._has_required_inputs():
-            return
+        self.inference_busy = True
 
-        data = self._build_policy_input()
+        try:
+            now = time.perf_counter()
+            if self.last_publish_time is not None:
+                if now - self.last_publish_time < self.trajectory_dt:
+                    return
+            if not self.running or self.policy is None:
+                return
+            if not self._has_required_inputs():
+                return
 
-        with torch.no_grad():
-            action = self.policy.select_action(data)
-        action = action[0].detach().cpu().numpy().astype(np.float32)
-        self._publish_action(action)
-        self.step += 1
+            total_start = time.perf_counter()
+            # if self.device.startswith("cuda") and torch.cuda.is_available():
+            #     torch.cuda.synchronize()
+
+            infer_start = time.perf_counter()
+            data = self._build_policy_input()
+            if data is None:
+                return
+
+            print(f"joint_positions : {self.latest_joint_positions}", flush=True)
+            with torch.no_grad():
+                action = self.policy.select_action(data)
+
+            # if self.device.startswith("cuda") and torch.cuda.is_available():
+            #     torch.cuda.synchronize()
+            
+            infer_end = time.perf_counter()
+            
+            action = action[0].detach().cpu().numpy().astype(np.float32)
+            print(f"action : {action}", flush=True)
+            self._publish_action(action)
+            self.last_publish_time = time.perf_counter()
+            total_end = time.perf_counter()
+            self.get_logger().info(
+                f"inference step={self.step}, "
+                f"policy_time={(infer_end - infer_start) * 1000:.2f} ms, "
+                f"total_time={(total_end - total_start) * 1000:.2f} ms"
+            )
+            self.step += 1
+        finally:
+            self.inference_busy = False
 
     def _has_required_inputs(self):
         if self.latest_image is None:
@@ -258,10 +338,10 @@ class RealPolicyInference(Node):
             return False
         if self._uses_feature("observation.right_wrist_image") and self.latest_right_wrist_image is None:
             return False
-        if self._uses_feature("observation.state") and self._state_from_ee_pose():
-            if self.latest_left_ee_state is None or self.latest_right_ee_state is None:
-                return False
-        needed = set(self.state_joint_names) | set(self.action_joint_names)
+        # if self._uses_feature("observation.state") and self._state_from_ee_pose():
+        #     if self.latest_left_ee_state is None or self.latest_right_ee_state is None:
+        #         return False
+        needed =  set(self.action_joint_names)
         needed |= set(self.left_arm_joint_names) | set(self.right_arm_joint_names)
         return all(name in self.latest_joint_positions for name in needed)
 
@@ -283,11 +363,12 @@ class RealPolicyInference(Node):
         data = {"task": [self.task]}
         if self._uses_feature("observation.state"):
             state = self._current_state()
+            if state is None:
+                return None
             data["observation.state"] = torch.tensor([state], dtype=torch.float32, device=self.device)
 
         image_map = {
             "observation.image": self.latest_image,
-            "observation.wrist_image": self.latest_wrist_image,
             "observation.left_wrist_image": self.latest_left_wrist_image,
             "observation.right_wrist_image": self.latest_right_wrist_image,
         }
@@ -302,14 +383,13 @@ class RealPolicyInference(Node):
     def _current_state(self):
         state_shape = self._feature_shape("observation.state")
         if state_shape == (12,):
-            return np.concatenate([self.latest_left_ee_state, self.latest_right_ee_state]).astype(np.float32)
-        state = self._joint_vector(self.state_joint_names)
-        if state_shape and len(state_shape) == 1:
-            dim = int(state_shape[0])
-            if state.size >= dim:
-                return state[:dim].astype(np.float32)
-            return np.pad(state, (0, dim - state.size)).astype(np.float32)
-        return state.astype(np.float32)
+            left_ee_state = self._lookup_ee_state(self.left_ee_frame)
+            right_ee_state = self._lookup_ee_state(self.right_ee_frame)
+
+            if left_ee_state is None or right_ee_state is None:
+                return None
+
+            return np.concatenate((left_ee_state, right_ee_state), axis=0).astype(np.float32)
 
     def _joint_vector(self, names):
         return np.array([self.latest_joint_positions[name] for name in names], dtype=np.float32)
@@ -454,7 +534,8 @@ def main():
         pass
     finally:
         node.destroy_node()
-        rclpy.shutdown()
+        if rclpy.ok():
+            rclpy.shutdown()
 
 
 if __name__ == "__main__":

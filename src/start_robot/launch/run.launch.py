@@ -295,10 +295,45 @@ def generate_launch_description():
         description='Policy device: cuda | cpu'
     )
 
+    clean_ros_prefix = (
+        'unset PYTHONPATH AMENT_PREFIX_PATH CMAKE_PREFIX_PATH COLCON_PREFIX_PATH PYTHONHOME LD_LIBRARY_PATH; '
+        'export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/ros/jazzy/bin; '
+        'source /opt/ros/jazzy/setup.bash; '
+        'source /home/robot/YMbot_ROS2/install/setup.bash; '
+    )
+
     head_camera_launch = ExecuteProcess(
         cmd=[
-            'ros2', 'launch', 'start_robot',
-            'gemini2L_recorder_launch.py'
+            'bash', '-lc',
+            clean_ros_prefix +
+            'ros2 run orbbec_camera orbbec_camera_node --ros-args '
+            '-r __node:=top '
+            '-r __ns:=/top/top '
+            '-p camera_name:=top '
+            '-p depth_registration:=true '
+            '-p device_num:=1 '
+            '-p enable_point_cloud:=false '
+            '-p enable_colored_point_cloud:=false '
+            '-p color_width:=640 '
+            '-p color_height:=400 '
+            '-p color_fps:=30 '
+            '-p color_format:=RGB8 '
+            '-p enable_color:=true '
+            '-p enable_color_auto_exposure:=false '
+            '-p color_exposure:=8000 '
+            '-p color_gain:=20 '
+            '-p enable_color_auto_white_balance:=true '
+            '-p depth_width:=640 '
+            '-p depth_height:=400 '
+            '-p depth_fps:=30 '
+            '-p depth_format:=Y16 '
+            '-p enable_depth:=false '
+            '-p enable_ir:=false '
+            '-p publish_tf:=true '
+            '-p enable_frame_sync:=true '
+            '-p use_hardware_time:=true '
+            '-p enable_depth_scale:=true '
+            '-p align_mode:=HW'
         ],
         output='log',
         name='head_camera_launch'
@@ -307,6 +342,7 @@ def generate_launch_description():
     set_head_camera_params = ExecuteProcess(
         cmd=[
             'bash', '-c',
+            clean_ros_prefix +
             'set -e; '
             'echo "[head_cam] waiting for /top/top/set_color_exposure ..."; '
             'until ros2 service type /top/top/set_color_exposure >/dev/null 2>&1; do sleep 0.2; done; '
@@ -463,7 +499,8 @@ def generate_launch_description():
         # 启动腕部相机节点
         ExecuteProcess(
             cmd=[
-                'ros2', 'launch', 'start_robot', 'rs_multi_camera_launch.py'
+                'bash', '-lc',
+                clean_ros_prefix + 'ros2 launch start_robot rs_multi_camera_launch.py'
             ],
             output='log'
         ),
