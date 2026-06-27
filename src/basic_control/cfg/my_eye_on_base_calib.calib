@@ -1,0 +1,20 @@
+parameters:
+  name: my_eye_on_base_calib
+  calibration_type: eye_on_base
+  robot_base_frame: Body_Link5
+  robot_effector_frame: Left_Arm_Link8
+  tracking_base_frame: top_color_optical_frame
+  tracking_marker_frame: aruco_marker_582
+  freehand_robot_movement: true
+  move_group_namespace: /
+  move_group: manipulator
+transform:
+  translation:
+    x: 0.0568151794009229
+    y: -0.0060688009024244816
+    z: 0.33263189859053577
+  rotation:
+    x: -0.6207464016089812
+    y: 0.6477069071334154
+    z: -0.31257857340859097
+    w: 0.3121607002603249
